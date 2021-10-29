@@ -1,0 +1,17 @@
+import 'package:fluro/fluro.dart';
+
+
+class Routes {
+  static String registeredGoods = '/registeredGoods';
+  static String emptyPage = '/emptyPage';
+  static String goodsStatus = '/goodsStatus';
+  static String consolidatedGoods= '/consolidatedGoods';
+  static String myOrder= '/myOrder';
+  static String tralSeries = '/tralSeries';
+  static String setAddress = '/setAddress';
+  static String coupon = '/coupon';
+  static String savingsDepositCard = '/savingsDepositCard';
+  static String noviceTutorial = '/noviceTutorial';
+  static String distributionMode = '/distributionMode';
+  static String home = '/';
+}

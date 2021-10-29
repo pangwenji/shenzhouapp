@@ -1,0 +1,591 @@
+define(['dart_sdk', 'packages/flutter/src/painting/image_stream.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/scheduler/binding.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__painting__image_cache_dart(dart_sdk, packages__flutter__src__painting__image_stream$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__scheduler__binding$46dart, packages__flutter__src__foundation__debug$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const developer = dart_sdk.developer;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const image_stream = packages__flutter__src__painting__image_stream$46dart.src__painting__image_stream;
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  const binding = packages__flutter__src__scheduler__binding$46dart.src__scheduler__binding;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var image_cache = Object.create(dart.library);
+  var $length = dartx.length;
+  var $values = dartx.values;
+  var $clear = dartx.clear;
+  var $remove = dartx.remove;
+  var $_set = dartx._set;
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $toString = dartx.toString;
+  var $_get = dartx._get;
+  var $containsKey = dartx.containsKey;
+  var $first = dartx.first;
+  var $keys = dartx.keys;
+  var $runtimeType = dartx.runtimeType;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    LinkedMapOfObject$_PendingImage: () => (T.LinkedMapOfObject$_PendingImage = dart.constFn(_js_helper.LinkedMap$(core.Object, image_cache._PendingImage)))(),
+    LinkedMapOfObject$_CachedImage: () => (T.LinkedMapOfObject$_CachedImage = dart.constFn(_js_helper.LinkedMap$(core.Object, image_cache._CachedImage)))(),
+    LinkedMapOfObject$_LiveImage: () => (T.LinkedMapOfObject$_LiveImage = dart.constFn(_js_helper.LinkedMap$(core.Object, image_cache._LiveImage)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    VoidTo_LiveImage: () => (T.VoidTo_LiveImage = dart.constFn(dart.fnType(image_cache._LiveImage, [])))(),
+    ImageInfoN: () => (T.ImageInfoN = dart.constFn(dart.nullable(image_stream.ImageInfo)))(),
+    ImageInfoNAndboolTovoid: () => (T.ImageInfoNAndboolTovoid = dart.constFn(dart.fnType(dart.void, [T.ImageInfoN(), core.bool])))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    DurationTovoid: () => (T.DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = [
+    "file:///D:/flutter/packages/flutter/lib/src/painting/image_cache.dart",
+    "package:flutter/src/painting/image_cache.dart"
+  ];
+  var _pendingImages = dart.privateName(image_cache, "_pendingImages");
+  var _cache = dart.privateName(image_cache, "_cache");
+  var _liveImages = dart.privateName(image_cache, "_liveImages");
+  var _maximumSize = dart.privateName(image_cache, "_maximumSize");
+  var _maximumSizeBytes = dart.privateName(image_cache, "_maximumSizeBytes");
+  var _currentSizeBytes = dart.privateName(image_cache, "_currentSizeBytes");
+  var _checkCacheSize = dart.privateName(image_cache, "_checkCacheSize");
+  var _touch = dart.privateName(image_cache, "_touch");
+  var _trackLiveImage = dart.privateName(image_cache, "_trackLiveImage");
+  image_cache.ImageCache = class ImageCache extends core.Object {
+    get maximumSize() {
+      return this[_maximumSize];
+    }
+    set maximumSize(value) {
+      let t0;
+      if (value == null) dart.nullFailed(I[0], 102, 23, "value");
+      if (!(value != null)) dart.assertFailed(null, I[0], 103, 12, "value != null");
+      if (!(dart.notNull(value) >= 0)) dart.assertFailed(null, I[0], 104, 12, "value >= 0");
+      if (value == this.maximumSize) return;
+      let timelineTask = null;
+      if (!false) {
+        timelineTask = (t0 = new developer.TimelineTask.new(), (() => {
+          t0.start("ImageCache.setMaximumSize", {arguments: new (T.IdentityMapOfString$dynamic()).from(["value", value])});
+          return t0;
+        })());
+      }
+      this[_maximumSize] = value;
+      if (this.maximumSize === 0) {
+        this.clear();
+      } else {
+        this[_checkCacheSize](timelineTask);
+      }
+      if (!false) {
+        dart.nullCheck(timelineTask).finish();
+      }
+    }
+    get currentSize() {
+      return this[_cache][$length];
+    }
+    get maximumSizeBytes() {
+      return this[_maximumSizeBytes];
+    }
+    set maximumSizeBytes(value) {
+      let t0;
+      if (value == null) dart.nullFailed(I[0], 141, 28, "value");
+      if (!(value != null)) dart.assertFailed(null, I[0], 142, 12, "value != null");
+      if (!(dart.notNull(value) >= 0)) dart.assertFailed(null, I[0], 143, 12, "value >= 0");
+      if (value == this[_maximumSizeBytes]) return;
+      let timelineTask = null;
+      if (!false) {
+        timelineTask = (t0 = new developer.TimelineTask.new(), (() => {
+          t0.start("ImageCache.setMaximumSizeBytes", {arguments: new (T.IdentityMapOfString$dynamic()).from(["value", value])});
+          return t0;
+        })());
+      }
+      this[_maximumSizeBytes] = value;
+      if (this[_maximumSizeBytes] === 0) {
+        this.clear();
+      } else {
+        this[_checkCacheSize](timelineTask);
+      }
+      if (!false) {
+        dart.nullCheck(timelineTask).finish();
+      }
+    }
+    get currentSizeBytes() {
+      return this[_currentSizeBytes];
+    }
+    clear() {
+      if (!false) {
+        developer.Timeline.instantSync("ImageCache.clear", {arguments: new (T.IdentityMapOfString$dynamic()).from(["pendingImages", this[_pendingImages][$length], "keepAliveImages", this[_cache][$length], "liveImages", this[_liveImages][$length], "currentSizeInBytes", this[_currentSizeBytes]])});
+      }
+      for (let image of this[_cache][$values]) {
+        image.dispose();
+      }
+      this[_cache][$clear]();
+      this[_pendingImages][$clear]();
+      this[_currentSizeBytes] = 0;
+    }
+    evict(key, opts) {
+      let t0;
+      if (key == null) dart.nullFailed(I[0], 238, 21, "key");
+      let includeLive = opts && 'includeLive' in opts ? opts.includeLive : true;
+      if (includeLive == null) dart.nullFailed(I[0], 238, 33, "includeLive");
+      if (!(includeLive != null)) dart.assertFailed(null, I[0], 239, 12, "includeLive != null");
+      if (dart.test(includeLive)) {
+        let image = this[_liveImages][$remove](key);
+        t0 = image;
+        t0 == null ? null : t0.dispose();
+      }
+      let pendingImage = this[_pendingImages][$remove](key);
+      if (pendingImage != null) {
+        if (!false) {
+          developer.Timeline.instantSync("ImageCache.evict", {arguments: new (T.IdentityMapOfString$dynamic()).from(["type", "pending"])});
+        }
+        pendingImage.removeListener();
+        return true;
+      }
+      let image = this[_cache][$remove](key);
+      if (image != null) {
+        if (!false) {
+          developer.Timeline.instantSync("ImageCache.evict", {arguments: new (T.IdentityMapOfString$dynamic()).from(["type", "keepAlive", "sizeInBytes", image.sizeBytes])});
+        }
+        this[_currentSizeBytes] = dart.notNull(this[_currentSizeBytes]) - dart.nullCheck(image.sizeBytes);
+        image.dispose();
+        return true;
+      }
+      if (!false) {
+        developer.Timeline.instantSync("ImageCache.evict", {arguments: new (T.IdentityMapOfString$dynamic()).from(["type", "miss"])});
+      }
+      return false;
+    }
+    [_touch](key, image, timelineTask) {
+      if (key == null) dart.nullFailed(I[0], 284, 22, "key");
+      if (image == null) dart.nullFailed(I[0], 284, 40, "image");
+      if (!(timelineTask != null)) dart.assertFailed(null, I[0], 285, 12, "timelineTask != null");
+      if (image.sizeBytes != null && dart.nullCheck(image.sizeBytes) <= dart.notNull(this.maximumSizeBytes) && dart.notNull(this.maximumSize) > 0) {
+        this[_currentSizeBytes] = dart.notNull(this[_currentSizeBytes]) + dart.nullCheck(image.sizeBytes);
+        this[_cache][$_set](key, image);
+        this[_checkCacheSize](timelineTask);
+      } else {
+        image.dispose();
+      }
+    }
+    [_trackLiveImage](key, completer, sizeBytes) {
+      let t0;
+      if (key == null) dart.nullFailed(I[0], 295, 31, "key");
+      if (completer == null) dart.nullFailed(I[0], 295, 57, "completer");
+      t0 = this[_liveImages][$putIfAbsent](key, dart.fn(() => new image_cache._LiveImage.new(completer, dart.fn(() => {
+        this[_liveImages][$remove](key);
+      }, T.VoidTovoid())), T.VoidTo_LiveImage()));
+      t0.sizeBytes == null ? t0.sizeBytes = sizeBytes : null;
+    }
+    putIfAbsent(key, loader, opts) {
+      let t0, t0$, t1;
+      if (key == null) dart.nullFailed(I[0], 322, 44, "key");
+      if (loader == null) dart.nullFailed(I[0], 322, 81, "loader");
+      let onError = opts && 'onError' in opts ? opts.onError : null;
+      if (!(key != null)) dart.assertFailed(null, I[0], 323, 12, "key != null");
+      if (!(loader != null)) dart.assertFailed(null, I[0], 324, 12, "loader != null");
+      let timelineTask = null;
+      let listenerTask = null;
+      if (!false) {
+        timelineTask = (t0 = new developer.TimelineTask.new(), (() => {
+          t0.start("ImageCache.putIfAbsent", {arguments: new (T.IdentityMapOfString$dynamic()).from(["key", dart.toString(key)])});
+          return t0;
+        })());
+      }
+      let result = (t0$ = this[_pendingImages][$_get](key), t0$ == null ? null : t0$.completer);
+      if (result != null) {
+        if (!false) {
+          dart.nullCheck(timelineTask).finish({arguments: new (T.IdentityMapOfString$dynamic()).from(["result", "pending"])});
+        }
+        return result;
+      }
+      let image = this[_cache][$remove](key);
+      if (image != null) {
+        if (!false) {
+          dart.nullCheck(timelineTask).finish({arguments: new (T.IdentityMapOfString$dynamic()).from(["result", "keepAlive"])});
+        }
+        this[_trackLiveImage](key, image.completer, image.sizeBytes);
+        this[_cache][$_set](key, image);
+        return image.completer;
+      }
+      let liveImage = this[_liveImages][$_get](key);
+      if (liveImage != null) {
+        this[_touch](key, new image_cache._CachedImage.new(liveImage.completer, {sizeBytes: liveImage.sizeBytes}), timelineTask);
+        if (!false) {
+          dart.nullCheck(timelineTask).finish({arguments: new (T.IdentityMapOfString$dynamic()).from(["result", "keepAlive"])});
+        }
+        return liveImage.completer;
+      }
+      try {
+        result = loader();
+        this[_trackLiveImage](key, result, null);
+      } catch (e) {
+        let error = dart.getThrown(e);
+        let stackTrace = dart.stackTrace(e);
+        if (core.Object.is(error)) {
+          if (!false) {
+            dart.nullCheck(timelineTask).finish({arguments: new (T.IdentityMapOfString$dynamic()).from(["result", "error", "error", dart.toString(error), "stackTrace", stackTrace.toString()])});
+          }
+          if (onError != null) {
+            onError(error, stackTrace);
+            return null;
+          } else {
+            dart.rethrow(e);
+          }
+        } else
+          throw e;
+      }
+      if (!false) {
+        listenerTask = (t1 = new developer.TimelineTask.new({parent: timelineTask}), (() => {
+          t1.start("listener");
+          return t1;
+        })());
+      }
+      let listenedOnce = false;
+      let untrackedPendingImage = null;
+      const listener = (info, syncCall) => {
+        let t1;
+        if (syncCall == null) dart.nullFailed(I[0], 411, 41, "syncCall");
+        let sizeBytes = null;
+        if (info != null) {
+          sizeBytes = dart.notNull(info.image.height) * dart.notNull(info.image.width) * 4;
+          info.dispose();
+        }
+        let image = new image_cache._CachedImage.new(dart.nullCheck(result), {sizeBytes: sizeBytes});
+        this[_trackLiveImage](key, result, sizeBytes);
+        if (untrackedPendingImage == null) {
+          this[_touch](key, image, listenerTask);
+        } else {
+          image.dispose();
+        }
+        let pendingImage = (t1 = untrackedPendingImage, t1 == null ? this[_pendingImages][$remove](key) : t1);
+        if (pendingImage != null) {
+          pendingImage.removeListener();
+        }
+        if (!false && !listenedOnce) {
+          dart.nullCheck(listenerTask).finish({arguments: new (T.IdentityMapOfString$dynamic()).from(["syncCall", syncCall, "sizeInBytes", sizeBytes])});
+          dart.nullCheck(timelineTask).finish({arguments: new (T.IdentityMapOfString$dynamic()).from(["currentSizeBytes", this.currentSizeBytes, "currentSize", this.currentSize])});
+        }
+        listenedOnce = true;
+      };
+      dart.fn(listener, T.ImageInfoNAndboolTovoid());
+      let streamListener = new image_stream.ImageStreamListener.new(listener);
+      if (dart.notNull(this.maximumSize) > 0 && dart.notNull(this.maximumSizeBytes) > 0) {
+        this[_pendingImages][$_set](key, new image_cache._PendingImage.new(result, streamListener));
+      } else {
+        untrackedPendingImage = new image_cache._PendingImage.new(result, streamListener);
+      }
+      result.addListener(streamListener);
+      return result;
+    }
+    statusForKey(key) {
+      if (key == null) dart.nullFailed(I[0], 461, 40, "key");
+      return new image_cache.ImageCacheStatus.__({pending: this[_pendingImages][$containsKey](key), keepAlive: this[_cache][$containsKey](key), live: this[_liveImages][$containsKey](key)});
+    }
+    containsKey(key) {
+      if (key == null) dart.nullFailed(I[0], 470, 27, "key");
+      return this[_pendingImages][$_get](key) != null || this[_cache][$_get](key) != null;
+    }
+    get liveImageCount() {
+      return this[_liveImages][$length];
+    }
+    get pendingImageCount() {
+      return this[_pendingImages][$length];
+    }
+    clearLiveImages() {
+      for (let image of this[_liveImages][$values]) {
+        image.dispose();
+      }
+      this[_liveImages][$clear]();
+    }
+    [_checkCacheSize](timelineTask) {
+      let t1;
+      let finishArgs = new (T.IdentityMapOfString$dynamic()).new();
+      let checkCacheTask = null;
+      if (!false) {
+        checkCacheTask = (t1 = new developer.TimelineTask.new({parent: timelineTask}), (() => {
+          t1.start("checkCacheSize");
+          return t1;
+        })());
+        finishArgs[$_set]("evictedKeys", T.JSArrayOfString().of([]));
+        finishArgs[$_set]("currentSize", this.currentSize);
+        finishArgs[$_set]("currentSizeBytes", this.currentSizeBytes);
+      }
+      while (dart.notNull(this[_currentSizeBytes]) > dart.notNull(this[_maximumSizeBytes]) || dart.notNull(this[_cache][$length]) > dart.notNull(this[_maximumSize])) {
+        let key = this[_cache][$keys][$first];
+        let image = dart.nullCheck(this[_cache][$_get](key));
+        this[_currentSizeBytes] = dart.notNull(this[_currentSizeBytes]) - dart.nullCheck(image.sizeBytes);
+        image.dispose();
+        this[_cache][$remove](key);
+        if (!false) {
+          dart.dsend(finishArgs[$_get]("evictedKeys"), 'add', [dart.toString(key)]);
+        }
+      }
+      if (!false) {
+        finishArgs[$_set]("endSize", this.currentSize);
+        finishArgs[$_set]("endSizeBytes", this.currentSizeBytes);
+        dart.nullCheck(checkCacheTask).finish({arguments: finishArgs});
+      }
+      if (!(dart.notNull(this[_currentSizeBytes]) >= 0)) dart.assertFailed(null, I[0], 528, 12, "_currentSizeBytes >= 0");
+      if (!(dart.notNull(this[_cache][$length]) <= dart.notNull(this.maximumSize))) dart.assertFailed(null, I[0], 529, 12, "_cache.length <= maximumSize");
+      if (!(dart.notNull(this[_currentSizeBytes]) <= dart.notNull(this.maximumSizeBytes))) dart.assertFailed(null, I[0], 530, 12, "_currentSizeBytes <= maximumSizeBytes");
+    }
+  };
+  (image_cache.ImageCache.new = function() {
+    this[_pendingImages] = new (T.LinkedMapOfObject$_PendingImage()).new();
+    this[_cache] = new (T.LinkedMapOfObject$_CachedImage()).new();
+    this[_liveImages] = new (T.LinkedMapOfObject$_LiveImage()).new();
+    this[_maximumSize] = 1000;
+    this[_maximumSizeBytes] = 104857600;
+    this[_currentSizeBytes] = 0;
+    ;
+  }).prototype = image_cache.ImageCache.prototype;
+  dart.addTypeTests(image_cache.ImageCache);
+  dart.addTypeCaches(image_cache.ImageCache);
+  dart.setMethodSignature(image_cache.ImageCache, () => ({
+    __proto__: dart.getMethods(image_cache.ImageCache.__proto__),
+    clear: dart.fnType(dart.void, []),
+    evict: dart.fnType(core.bool, [core.Object], {includeLive: core.bool}, {}),
+    [_touch]: dart.fnType(dart.void, [core.Object, image_cache._CachedImage, dart.nullable(developer.TimelineTask)]),
+    [_trackLiveImage]: dart.fnType(dart.void, [core.Object, image_stream.ImageStreamCompleter, dart.nullable(core.int)]),
+    putIfAbsent: dart.fnType(dart.nullable(image_stream.ImageStreamCompleter), [core.Object, dart.fnType(image_stream.ImageStreamCompleter, [])], {onError: dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)]))}, {}),
+    statusForKey: dart.fnType(image_cache.ImageCacheStatus, [core.Object]),
+    containsKey: dart.fnType(core.bool, [core.Object]),
+    clearLiveImages: dart.fnType(dart.void, []),
+    [_checkCacheSize]: dart.fnType(dart.void, [dart.nullable(developer.TimelineTask)])
+  }));
+  dart.setGetterSignature(image_cache.ImageCache, () => ({
+    __proto__: dart.getGetters(image_cache.ImageCache.__proto__),
+    maximumSize: core.int,
+    currentSize: core.int,
+    maximumSizeBytes: core.int,
+    currentSizeBytes: core.int,
+    liveImageCount: core.int,
+    pendingImageCount: core.int
+  }));
+  dart.setSetterSignature(image_cache.ImageCache, () => ({
+    __proto__: dart.getSetters(image_cache.ImageCache.__proto__),
+    maximumSize: core.int,
+    maximumSizeBytes: core.int
+  }));
+  dart.setLibraryUri(image_cache.ImageCache, I[1]);
+  dart.setFieldSignature(image_cache.ImageCache, () => ({
+    __proto__: dart.getFields(image_cache.ImageCache.__proto__),
+    [_pendingImages]: dart.finalFieldType(core.Map$(core.Object, image_cache._PendingImage)),
+    [_cache]: dart.finalFieldType(core.Map$(core.Object, image_cache._CachedImage)),
+    [_liveImages]: dart.finalFieldType(core.Map$(core.Object, image_cache._LiveImage)),
+    [_maximumSize]: dart.fieldType(core.int),
+    [_maximumSizeBytes]: dart.fieldType(core.int),
+    [_currentSizeBytes]: dart.fieldType(core.int)
+  }));
+  var pending$ = dart.privateName(image_cache, "ImageCacheStatus.pending");
+  var keepAlive$ = dart.privateName(image_cache, "ImageCacheStatus.keepAlive");
+  var live$ = dart.privateName(image_cache, "ImageCacheStatus.live");
+  image_cache.ImageCacheStatus = class ImageCacheStatus extends core.Object {
+    get pending() {
+      return this[pending$];
+    }
+    set pending(value) {
+      super.pending = value;
+    }
+    get keepAlive() {
+      return this[keepAlive$];
+    }
+    set keepAlive(value) {
+      super.keepAlive = value;
+    }
+    get live() {
+      return this[live$];
+    }
+    set live(value) {
+      super.live = value;
+    }
+    get tracked() {
+      return dart.test(this.pending) || dart.test(this.keepAlive) || dart.test(this.live);
+    }
+    get untracked() {
+      return !dart.test(this.pending) && !dart.test(this.keepAlive) && !dart.test(this.live);
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) {
+        return false;
+      }
+      return image_cache.ImageCacheStatus.is(other) && other.pending == this.pending && other.keepAlive == this.keepAlive && other.live == this.live;
+    }
+    get hashCode() {
+      return ui.hashValues(this.pending, this.keepAlive, this.live);
+    }
+    toString() {
+      return dart.str(object.objectRuntimeType(this, "ImageCacheStatus")) + "(pending: " + dart.str(this.pending) + ", live: " + dart.str(this.live) + ", keepAlive: " + dart.str(this.keepAlive) + ")";
+    }
+  };
+  (image_cache.ImageCacheStatus.__ = function(opts) {
+    let pending = opts && 'pending' in opts ? opts.pending : false;
+    if (pending == null) dart.nullFailed(I[0], 554, 10, "pending");
+    let keepAlive = opts && 'keepAlive' in opts ? opts.keepAlive : false;
+    if (keepAlive == null) dart.nullFailed(I[0], 555, 10, "keepAlive");
+    let live = opts && 'live' in opts ? opts.live : false;
+    if (live == null) dart.nullFailed(I[0], 556, 10, "live");
+    this[pending$] = pending;
+    this[keepAlive$] = keepAlive;
+    this[live$] = live;
+    if (!(!dart.test(pending) || !dart.test(keepAlive))) dart.assertFailed(null, I[0], 557, 15, "!pending || !keepAlive");
+    ;
+  }).prototype = image_cache.ImageCacheStatus.prototype;
+  dart.addTypeTests(image_cache.ImageCacheStatus);
+  dart.addTypeCaches(image_cache.ImageCacheStatus);
+  dart.setGetterSignature(image_cache.ImageCacheStatus, () => ({
+    __proto__: dart.getGetters(image_cache.ImageCacheStatus.__proto__),
+    tracked: core.bool,
+    untracked: core.bool
+  }));
+  dart.setLibraryUri(image_cache.ImageCacheStatus, I[1]);
+  dart.setFieldSignature(image_cache.ImageCacheStatus, () => ({
+    __proto__: dart.getFields(image_cache.ImageCacheStatus.__proto__),
+    pending: dart.finalFieldType(core.bool),
+    keepAlive: dart.finalFieldType(core.bool),
+    live: dart.finalFieldType(core.bool)
+  }));
+  dart.defineExtensionMethods(image_cache.ImageCacheStatus, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(image_cache.ImageCacheStatus, ['hashCode']);
+  image_cache._CachedImageBase = class _CachedImageBase extends core.Object {
+    dispose() {
+      if (!(this.handle != null)) dart.assertFailed(null, I[0], 622, 12, "handle != null");
+      dart.nullCheck(binding.SchedulerBinding.instance).addPostFrameCallback(dart.fn(timeStamp => {
+        let t1;
+        if (timeStamp == null) dart.nullFailed(I[0], 625, 63, "timeStamp");
+        if (!(this.handle != null)) dart.assertFailed(null, I[0], 626, 14, "handle != null");
+        t1 = this.handle;
+        t1 == null ? null : t1.dispose();
+        this.handle = null;
+      }, T.DurationTovoid()));
+    }
+  };
+  (image_cache._CachedImageBase.new = function(completer, opts) {
+    if (completer == null) dart.nullFailed(I[0], 611, 10, "completer");
+    let sizeBytes = opts && 'sizeBytes' in opts ? opts.sizeBytes : null;
+    this.completer = completer;
+    this.sizeBytes = sizeBytes;
+    if (!(completer != null)) dart.assertFailed(null, I[0], 613, 15, "completer != null");
+    this.handle = completer.keepAlive();
+    ;
+  }).prototype = image_cache._CachedImageBase.prototype;
+  dart.addTypeTests(image_cache._CachedImageBase);
+  dart.addTypeCaches(image_cache._CachedImageBase);
+  dart.setMethodSignature(image_cache._CachedImageBase, () => ({
+    __proto__: dart.getMethods(image_cache._CachedImageBase.__proto__),
+    dispose: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(image_cache._CachedImageBase, I[1]);
+  dart.setFieldSignature(image_cache._CachedImageBase, () => ({
+    __proto__: dart.getFields(image_cache._CachedImageBase.__proto__),
+    completer: dart.finalFieldType(image_stream.ImageStreamCompleter),
+    sizeBytes: dart.fieldType(dart.nullable(core.int)),
+    handle: dart.fieldType(dart.nullable(image_stream.ImageStreamCompleterHandle))
+  }));
+  image_cache._CachedImage = class _CachedImage extends image_cache._CachedImageBase {};
+  (image_cache._CachedImage.new = function(completer, opts) {
+    if (completer == null) dart.nullFailed(I[0], 634, 37, "completer");
+    let sizeBytes = opts && 'sizeBytes' in opts ? opts.sizeBytes : null;
+    image_cache._CachedImage.__proto__.new.call(this, completer, {sizeBytes: sizeBytes});
+    ;
+  }).prototype = image_cache._CachedImage.prototype;
+  dart.addTypeTests(image_cache._CachedImage);
+  dart.addTypeCaches(image_cache._CachedImage);
+  dart.setLibraryUri(image_cache._CachedImage, I[1]);
+  var ___LiveImage__handleRemove = dart.privateName(image_cache, "_#_LiveImage#_handleRemove");
+  var ___LiveImage__handleRemove_isSet = dart.privateName(image_cache, "_#_LiveImage#_handleRemove#isSet");
+  var _handleRemove = dart.privateName(image_cache, "_handleRemove");
+  image_cache._LiveImage = class _LiveImage extends image_cache._CachedImageBase {
+    get [_handleRemove]() {
+      let t1;
+      return dart.test(this[___LiveImage__handleRemove_isSet]) ? (t1 = this[___LiveImage__handleRemove], t1) : dart.throw(new _internal.LateError.fieldNI("_handleRemove"));
+    }
+    set [_handleRemove](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 648, 21, "null");
+      this[___LiveImage__handleRemove_isSet] = true;
+      this[___LiveImage__handleRemove] = t1;
+    }
+    dispose() {
+      this.completer.removeOnLastListenerRemovedCallback(this[_handleRemove]);
+      super.dispose();
+    }
+    toString() {
+      return diagnostics.describeIdentity(this);
+    }
+  };
+  (image_cache._LiveImage.new = function(completer, handleRemove, opts) {
+    if (completer == null) dart.nullFailed(I[0], 639, 35, "completer");
+    if (handleRemove == null) dart.nullFailed(I[0], 639, 59, "handleRemove");
+    let sizeBytes = opts && 'sizeBytes' in opts ? opts.sizeBytes : null;
+    this[___LiveImage__handleRemove] = null;
+    this[___LiveImage__handleRemove_isSet] = false;
+    image_cache._LiveImage.__proto__.new.call(this, completer, {sizeBytes: sizeBytes});
+    this[_handleRemove] = dart.fn(() => {
+      handleRemove();
+      this.dispose();
+    }, T.VoidTovoid());
+    completer.addOnLastListenerRemovedCallback(this[_handleRemove]);
+  }).prototype = image_cache._LiveImage.prototype;
+  dart.addTypeTests(image_cache._LiveImage);
+  dart.addTypeCaches(image_cache._LiveImage);
+  dart.setGetterSignature(image_cache._LiveImage, () => ({
+    __proto__: dart.getGetters(image_cache._LiveImage.__proto__),
+    [_handleRemove]: dart.fnType(dart.void, [])
+  }));
+  dart.setSetterSignature(image_cache._LiveImage, () => ({
+    __proto__: dart.getSetters(image_cache._LiveImage.__proto__),
+    [_handleRemove]: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(image_cache._LiveImage, I[1]);
+  dart.setFieldSignature(image_cache._LiveImage, () => ({
+    __proto__: dart.getFields(image_cache._LiveImage.__proto__),
+    [___LiveImage__handleRemove]: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
+    [___LiveImage__handleRemove_isSet]: dart.fieldType(core.bool)
+  }));
+  dart.defineExtensionMethods(image_cache._LiveImage, ['toString']);
+  image_cache._PendingImage = class _PendingImage extends core.Object {
+    removeListener() {
+      this.completer.removeListener(this.listener);
+    }
+  };
+  (image_cache._PendingImage.new = function(completer, listener) {
+    if (completer == null) dart.nullFailed(I[0], 661, 22, "completer");
+    if (listener == null) dart.nullFailed(I[0], 661, 38, "listener");
+    this.completer = completer;
+    this.listener = listener;
+    ;
+  }).prototype = image_cache._PendingImage.prototype;
+  dart.addTypeTests(image_cache._PendingImage);
+  dart.addTypeCaches(image_cache._PendingImage);
+  dart.setMethodSignature(image_cache._PendingImage, () => ({
+    __proto__: dart.getMethods(image_cache._PendingImage.__proto__),
+    removeListener: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(image_cache._PendingImage, I[1]);
+  dart.setFieldSignature(image_cache._PendingImage, () => ({
+    __proto__: dart.getFields(image_cache._PendingImage.__proto__),
+    completer: dart.finalFieldType(image_stream.ImageStreamCompleter),
+    listener: dart.finalFieldType(image_stream.ImageStreamListener)
+  }));
+  dart.defineLazy(image_cache, {
+    /*image_cache._kDefaultSize*/get _kDefaultSize() {
+      return 1000;
+    },
+    /*image_cache._kDefaultSizeBytes*/get _kDefaultSizeBytes() {
+      return 104857600;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/painting/image_cache.dart", {
+    "package:flutter/src/painting/image_cache.dart": image_cache
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["image_cache.dart"],"names":[],"mappings":"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","file":"../../../../../../packages/flutter/src/painting/image_cache.dart.lib.js"}');
+  // Exports:
+  return {
+    src__painting__image_cache: image_cache
+  };
+}));
+
+//# sourceMappingURL=image_cache.dart.lib.js.map

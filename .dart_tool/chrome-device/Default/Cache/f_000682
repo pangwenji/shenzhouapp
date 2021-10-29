@@ -1,0 +1,1135 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/change_notifier.dart'], (function load__packages__provide__provide_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__change_notifier$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  var provide = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $_set = dartx._set;
+  var $entries = dartx.entries;
+  var $addAll = dartx.addAll;
+  var $keys = dartx.keys;
+  var $values = dartx.values;
+  var $_get = dartx._get;
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $add = dartx.add;
+  dart._checkModuleNullSafetyMode(false);
+  var T$ = {
+    _LocationL: () => (T$._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    ProviderScopeL: () => (T$.ProviderScopeL = dart.constFn(dart.legacy(provide.ProviderScope)))(),
+    TypeL: () => (T$.TypeL = dart.constFn(dart.legacy(core.Type)))(),
+    ProviderL: () => (T$.ProviderL = dart.constFn(dart.legacy(provide.Provider)))(),
+    MapOfTypeL$ProviderL: () => (T$.MapOfTypeL$ProviderL = dart.constFn(core.Map$(T$.TypeL(), T$.ProviderL())))(),
+    MapLOfTypeL$ProviderL: () => (T$.MapLOfTypeL$ProviderL = dart.constFn(dart.legacy(T$.MapOfTypeL$ProviderL())))(),
+    LinkedMapOfProviderScopeL$MapLOfTypeL$ProviderL: () => (T$.LinkedMapOfProviderScopeL$MapLOfTypeL$ProviderL = dart.constFn(_js_helper.LinkedMap$(T$.ProviderScopeL(), T$.MapLOfTypeL$ProviderL())))(),
+    LinkedMapOfTypeL$ProviderL: () => (T$.LinkedMapOfTypeL$ProviderL = dart.constFn(_js_helper.LinkedMap$(T$.TypeL(), T$.ProviderL())))(),
+    ListenableL: () => (T$.ListenableL = dart.constFn(dart.legacy(change_notifier.Listenable)))(),
+    WidgetL: () => (T$.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    BuildContextL: () => (T$.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLAndWidgetLToWidgetL: () => (T$.BuildContextLAndWidgetLToWidgetL = dart.constFn(dart.fnType(T$.WidgetL(), [T$.BuildContextL(), T$.WidgetL()])))(),
+    ListOfTypeL: () => (T$.ListOfTypeL = dart.constFn(core.List$(T$.TypeL())))(),
+    ListLOfTypeL: () => (T$.ListLOfTypeL = dart.constFn(dart.legacy(T$.ListOfTypeL())))(),
+    LinkedMapOfProviderScopeL$ListLOfTypeL: () => (T$.LinkedMapOfProviderScopeL$ListLOfTypeL = dart.constFn(_js_helper.LinkedMap$(T$.ProviderScopeL(), T$.ListLOfTypeL())))(),
+    JSArrayOfTypeL: () => (T$.JSArrayOfTypeL = dart.constFn(_interceptors.JSArray$(T$.TypeL())))(),
+    VoidToListLOfTypeL: () => (T$.VoidToListLOfTypeL = dart.constFn(dart.fnType(T$.ListLOfTypeL(), [])))(),
+    MapOfTypeL$dynamic: () => (T$.MapOfTypeL$dynamic = dart.constFn(core.Map$(T$.TypeL(), dart.dynamic)))(),
+    MapLOfTypeL$dynamic: () => (T$.MapLOfTypeL$dynamic = dart.constFn(dart.legacy(T$.MapOfTypeL$dynamic())))(),
+    LinkedMapOfProviderScopeL$MapLOfTypeL$dynamic: () => (T$.LinkedMapOfProviderScopeL$MapLOfTypeL$dynamic = dart.constFn(_js_helper.LinkedMap$(T$.ProviderScopeL(), T$.MapLOfTypeL$dynamic())))(),
+    JSArrayOfListenableL: () => (T$.JSArrayOfListenableL = dart.constFn(_interceptors.JSArray$(T$.ListenableL())))(),
+    LinkedMapOfTypeL$dynamic: () => (T$.LinkedMapOfTypeL$dynamic = dart.constFn(_js_helper.LinkedMap$(T$.TypeL(), dart.dynamic)))(),
+    InheritedWidgetL: () => (T$.InheritedWidgetL = dart.constFn(dart.legacy(framework.InheritedWidget)))(),
+    _InheritedProvidersL: () => (T$._InheritedProvidersL = dart.constFn(dart.legacy(provide._InheritedProviders)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "providers",
+        [_Location_column]: 9,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "parent",
+        [_Location_column]: 9,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], T$._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/provide-1.0.2/lib/provide.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: provide.ProviderScope.prototype,
+        [_name$]: "_default"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "listenable",
+        [_Location_column]: 9,
+        [_Location_line]: 280,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 281,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 282,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10], T$._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 279,
+        [_Location_file]: "file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/provide-1.0.2/lib/provide.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "listenable",
+        [_Location_column]: 9,
+        [_Location_line]: 287,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 288,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 289,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15], T$._LocationL());
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 286,
+        [_Location_file]: "file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/provide-1.0.2/lib/provide.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "listenable",
+        [_Location_column]: 7,
+        [_Location_line]: 350,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 351,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 7,
+        [_Location_line]: 352,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], T$._LocationL());
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 349,
+        [_Location_file]: "file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/provide-1.0.2/lib/provide.dart"
+      });
+    }
+  }, false);
+  var C = Array(21).fill(void 0);
+  var I = [
+    "package:provide/provide.dart",
+    "file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/provide-1.0.2/lib/provide.dart"
+  ];
+  var child$ = dart.privateName(provide, "ProviderNode.child");
+  var providers$ = dart.privateName(provide, "ProviderNode.providers");
+  var dispose$ = dart.privateName(provide, "ProviderNode.dispose");
+  provide.ProviderNode = class ProviderNode extends framework.StatefulWidget {
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    get providers() {
+      return this[providers$];
+    }
+    set providers(value) {
+      super.providers = value;
+    }
+    get dispose() {
+      return this[dispose$];
+    }
+    set dispose(value) {
+      super.dispose = value;
+    }
+    createState() {
+      return new provide._ProviderNodeState.new({child: this.child, providers: this.providers, disposeProviders: this.dispose});
+    }
+  };
+  (provide.ProviderNode.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let providers = opts && 'providers' in opts ? opts.providers : null;
+    let dispose = opts && 'dispose' in opts ? opts.dispose : true;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[child$] = child;
+    this[providers$] = providers;
+    this[dispose$] = dispose;
+    provide.ProviderNode.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = provide.ProviderNode.prototype;
+  dart.addTypeTests(provide.ProviderNode);
+  dart.addTypeCaches(provide.ProviderNode);
+  dart.setMethodSignature(provide.ProviderNode, () => ({
+    __proto__: dart.getMethods(provide.ProviderNode.__proto__),
+    createState: dart.fnType(dart.legacy(framework.State$(dart.legacy(framework.StatefulWidget))), [])
+  }));
+  dart.setLibraryUri(provide.ProviderNode, I[0]);
+  dart.setFieldSignature(provide.ProviderNode, () => ({
+    __proto__: dart.getFields(provide.ProviderNode.__proto__),
+    child: dart.finalFieldType(dart.legacy(framework.Widget)),
+    providers: dart.finalFieldType(dart.legacy(provide.Providers)),
+    dispose: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  const dispose = Symbol("dispose");
+  provide._ProviderNodeState = class _ProviderNodeState extends framework.State$(dart.legacy(provide.ProviderNode)) {
+    build(context) {
+      return new provide._InheritedProviders.new({child: this.child, providers: this.providers, parent: provide._InheritedProviders.of(context), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+    }
+    dispose() {
+      return async.async(dart.void, (function* dispose$() {
+        this[dispose]();
+        if (dart.test(this.disposeProviders)) {
+          yield this.providers.dispose();
+        }
+      }).bind(this));
+    }
+    [dispose]() {
+      return super.dispose();
+    }
+  };
+  (provide._ProviderNodeState.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let providers = opts && 'providers' in opts ? opts.providers : null;
+    let disposeProviders = opts && 'disposeProviders' in opts ? opts.disposeProviders : null;
+    this.child = child;
+    this.providers = providers;
+    this.disposeProviders = disposeProviders;
+    provide._ProviderNodeState.__proto__.new.call(this);
+    ;
+  }).prototype = provide._ProviderNodeState.prototype;
+  dart.addTypeTests(provide._ProviderNodeState);
+  dart.addTypeCaches(provide._ProviderNodeState);
+  dart.setMethodSignature(provide._ProviderNodeState, () => ({
+    __proto__: dart.getMethods(provide._ProviderNodeState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    dispose: dart.fnType(dart.legacy(async.Future$(dart.void)), [])
+  }));
+  dart.setLibraryUri(provide._ProviderNodeState, I[0]);
+  dart.setFieldSignature(provide._ProviderNodeState, () => ({
+    __proto__: dart.getFields(provide._ProviderNodeState.__proto__),
+    child: dart.finalFieldType(dart.legacy(framework.Widget)),
+    providers: dart.finalFieldType(dart.legacy(provide.Providers)),
+    disposeProviders: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var _name$ = dart.privateName(provide, "ProviderScope._name");
+  var _name = dart.privateName(provide, "_name");
+  provide.ProviderScope = class ProviderScope extends core.Object {
+    get [_name]() {
+      return this[_name$];
+    }
+    set [_name](value) {
+      super[_name] = value;
+    }
+    toString() {
+      return "Scope ('" + dart.str(this[_name]) + "')";
+    }
+  };
+  (provide.ProviderScope.new = function(_name) {
+    this[_name$] = _name;
+    ;
+  }).prototype = provide.ProviderScope.prototype;
+  dart.addTypeTests(provide.ProviderScope);
+  dart.addTypeCaches(provide.ProviderScope);
+  dart.setMethodSignature(provide.ProviderScope, () => ({
+    __proto__: dart.getMethods(provide.ProviderScope.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(provide.ProviderScope, I[0]);
+  dart.setFieldSignature(provide.ProviderScope, () => ({
+    __proto__: dart.getFields(provide.ProviderScope.__proto__),
+    [_name]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(provide.ProviderScope, ['toString']);
+  var _providers = dart.privateName(provide, "_providers");
+  var _providersForScope = dart.privateName(provide, "_providersForScope");
+  provide.Providers = class Providers extends core.Object {
+    static withProviders(providers, opts) {
+      let t0;
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      t0 = new provide.Providers.new();
+      return (() => {
+        t0.provideAll(providers, {scope: scope});
+        return t0;
+      })();
+    }
+    provide(T, provider, opts) {
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      if (!dart.equals(provider.type, dart.wrapType(dart.legacy(T)))) dart.assertFailed(null, I[1], 112, 12, "provider.type == T");
+      this[_providersForScope](scope)[$_set](dart.wrapType(dart.legacy(T)), provider);
+    }
+    provideAll(providers, opts) {
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      for (let entry of providers[$entries]) {
+        if (!dart.equals(entry.key, entry.value.type)) {
+          if (dart.equals(entry.value.type, dart.wrapType(dart.dynamic))) {
+            dart.throw(new core.ArgumentError.new("Not able to infer the type of provider for" + " " + dart.str(entry.key) + " automatically. Add type argument to provider."));
+          }
+          dart.throw(new core.ArgumentError.new("Type mismatch between " + dart.str(entry.key) + " and provider " + "of " + dart.str(entry.value.type) + "."));
+        }
+      }
+      this[_providersForScope](scope)[$addAll](providers);
+    }
+    provideFrom(other) {
+      for (let scope of other[_providers][$keys]) {
+        this.provideAll(other[_providersForScope](scope), {scope: scope});
+      }
+    }
+    provideValue(T, value, opts) {
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      this.provide(dart.legacy(T), provide.Provider$(dart.legacy(T)).value(value), {scope: scope});
+    }
+    dispose() {
+      return async.async(dart.void, (function* dispose() {
+        for (let scopeMap of this[_providers][$values]) {
+          for (let provider of scopeMap[$values]) {
+            yield provider.dispose();
+          }
+        }
+      }).bind(this));
+    }
+    getFromType(type, opts) {
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      return this[_providersForScope](scope)[$_get](type);
+    }
+    [_providersForScope](scope) {
+      let t0, t3, t2, t1, t0$;
+      t0$ = this[_providers];
+      t1 = (t0 = scope, t0 == null ? provide.Providers.defaultScope : t0);
+      t2 = t0$[$_get](t1);
+      return t2 == null ? (t3 = new (T$.LinkedMapOfTypeL$ProviderL()).new(), t0$[$_set](T$.ProviderScopeL().as(t1), t3), t3) : t2;
+    }
+  };
+  (provide.Providers.new = function() {
+    this[_providers] = new (T$.LinkedMapOfProviderScopeL$MapLOfTypeL$ProviderL()).new();
+    ;
+  }).prototype = provide.Providers.prototype;
+  dart.addTypeTests(provide.Providers);
+  dart.addTypeCaches(provide.Providers);
+  dart.setMethodSignature(provide.Providers, () => ({
+    __proto__: dart.getMethods(provide.Providers.__proto__),
+    provide: dart.gFnType(T => [dart.void, [dart.legacy(provide.Provider$(dart.legacy(T)))], {scope: dart.legacy(provide.ProviderScope)}, {}]),
+    provideAll: dart.fnType(dart.void, [dart.legacy(core.Map$(dart.legacy(core.Type), dart.legacy(provide.Provider)))], {scope: dart.legacy(provide.ProviderScope)}, {}),
+    provideFrom: dart.fnType(dart.void, [dart.legacy(provide.Providers)]),
+    provideValue: dart.gFnType(T => [dart.void, [dart.legacy(T)], {scope: dart.legacy(provide.ProviderScope)}, {}]),
+    dispose: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    getFromType: dart.fnType(dart.legacy(provide.Provider), [dart.legacy(core.Type)], {scope: dart.legacy(provide.ProviderScope)}, {}),
+    [_providersForScope]: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.Type), dart.legacy(provide.Provider))), [dart.dynamic])
+  }));
+  dart.setLibraryUri(provide.Providers, I[0]);
+  dart.setFieldSignature(provide.Providers, () => ({
+    __proto__: dart.getFields(provide.Providers.__proto__),
+    [_providers]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(provide.ProviderScope), dart.legacy(core.Map$(dart.legacy(core.Type), dart.legacy(provide.Provider))))))
+  }));
+  dart.defineLazy(provide.Providers, {
+    /*provide.Providers.defaultScope*/get defaultScope() {
+      return C[5] || CT.C5;
+    }
+  }, true);
+  const _is_Provider_default = Symbol('_is_Provider_default');
+  provide.Provider$ = dart.generic(T => {
+    class Provider extends core.Object {
+      static value(value) {
+        return new (provide._ValueProvider$(dart.legacy(T))).new(value);
+      }
+      static function($function) {
+        return new (provide._LazyProvider$(dart.legacy(T))).new($function);
+      }
+      static withFactory($function) {
+        return new (provide._FactoryProvider$(dart.legacy(T))).new($function);
+      }
+      static stream(stream, opts) {
+        let initialValue = opts && 'initialValue' in opts ? opts.initialValue : null;
+        return new (provide._StreamProvider$(dart.legacy(T))).new(stream, {initialValue: initialValue});
+      }
+    }
+    (Provider[dart.mixinNew] = function() {
+    }).prototype = Provider.prototype;
+    dart.addTypeTests(Provider);
+    Provider.prototype[_is_Provider_default] = true;
+    dart.addTypeCaches(Provider);
+    dart.setLibraryUri(Provider, I[0]);
+    return Provider;
+  });
+  provide.Provider = provide.Provider$();
+  dart.addTypeTests(provide.Provider, _is_Provider_default);
+  const _is_TypedProvider_default = Symbol('_is_TypedProvider_default');
+  provide.TypedProvider$ = dart.generic(T => {
+    var TL = () => (TL = dart.constFn(dart.legacy(T)))();
+    class TypedProvider extends core.Object {
+      get type() {
+        return dart.wrapType(TL());
+      }
+    }
+    (TypedProvider.new = function() {
+      ;
+    }).prototype = TypedProvider.prototype;
+    dart.addTypeTests(TypedProvider);
+    TypedProvider.prototype[_is_TypedProvider_default] = true;
+    dart.addTypeCaches(TypedProvider);
+    TypedProvider[dart.implements] = () => [provide.Provider$(dart.legacy(T))];
+    dart.setGetterSignature(TypedProvider, () => ({
+      __proto__: dart.getGetters(TypedProvider.__proto__),
+      type: dart.legacy(core.Type)
+    }));
+    dart.setLibraryUri(TypedProvider, I[0]);
+    return TypedProvider;
+  });
+  provide.TypedProvider = provide.TypedProvider$();
+  dart.addTypeTests(provide.TypedProvider, _is_TypedProvider_default);
+  var builder$ = dart.privateName(provide, "Provide.builder");
+  var child$0 = dart.privateName(provide, "Provide.child");
+  var scope$ = dart.privateName(provide, "Provide.scope");
+  const _is_Provide_default = Symbol('_is_Provide_default');
+  provide.Provide$ = dart.generic(T => {
+    var TL = () => (TL = dart.constFn(dart.legacy(T)))();
+    class Provide extends framework.StatelessWidget {
+      get builder() {
+        return this[builder$];
+      }
+      set builder(value) {
+        super.builder = value;
+      }
+      get child() {
+        return this[child$0];
+      }
+      set child(value) {
+        super.child = value;
+      }
+      get scope() {
+        return this[scope$];
+      }
+      set scope(value) {
+        super.scope = value;
+      }
+      static value(T, context, opts) {
+        let scope = opts && 'scope' in opts ? opts.scope : null;
+        let provider = provide._InheritedProviders.of(context).getValue(dart.legacy(T), {scope: scope});
+        if (!(provider != null)) dart.assertFailed(null, I[1], 258, 12, "provider != null");
+        return provider.get(context);
+      }
+      static stream(T, context, opts) {
+        let scope = opts && 'scope' in opts ? opts.scope : null;
+        let provider = provide._InheritedProviders.of(context).getValue(dart.legacy(T), {scope: scope});
+        if (!(provider != null)) dart.assertFailed(null, I[1], 267, 12, "provider != null");
+        return provider.stream(context);
+      }
+      build(context) {
+        let provider = provide._InheritedProviders.of(context).getValue(TL(), {scope: this.scope});
+        let value = provider.get(context);
+        let listenable = provide._getListenable(provider, value);
+        if (T$.ListenableL().is(provider)) {
+          return new provide.ListeningBuilder.new({listenable: listenable, child: this.child, builder: dart.fn((buildContext, child) => {
+              let t2, t1, t0;
+              t0 = buildContext;
+              t1 = child;
+              t2 = provider.get(context);
+              return this.builder(t0, t1, t2);
+            }, T$.BuildContextLAndWidgetLToWidgetL()), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6});
+        } else if (T$.ListenableL().is(value)) {
+          return new provide.ListeningBuilder.new({listenable: listenable, child: this.child, builder: dart.fn((buildContext, child) => {
+              let t2, t1, t0;
+              t0 = buildContext;
+              t1 = child;
+              t2 = value;
+              return this.builder(t0, t1, t2);
+            }, T$.BuildContextLAndWidgetLToWidgetL()), $creationLocationd_0dea112b090073317d4: C[11] || CT.C11});
+        }
+        dart.throw(new core.ArgumentError.new("Either the type or the provider of it must" + " implement listenable. To get a non-listenable value, use the static" + " Provide.value<T>."));
+      }
+    }
+    (Provide.new = function(opts) {
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$] = builder;
+      this[child$0] = child;
+      this[scope$] = scope;
+      Provide.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Provide.prototype;
+    dart.addTypeTests(Provide);
+    Provide.prototype[_is_Provide_default] = true;
+    dart.addTypeCaches(Provide);
+    dart.setMethodSignature(Provide, () => ({
+      __proto__: dart.getMethods(Provide.__proto__),
+      build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+    }));
+    dart.setLibraryUri(Provide, I[0]);
+    dart.setFieldSignature(Provide, () => ({
+      __proto__: dart.getFields(Provide.__proto__),
+      builder: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext), dart.legacy(framework.Widget), dart.legacy(T)]))),
+      child: dart.finalFieldType(dart.legacy(framework.Widget)),
+      scope: dart.finalFieldType(dart.legacy(provide.ProviderScope))
+    }));
+    return Provide;
+  });
+  provide.Provide = provide.Provide$();
+  dart.addTypeTests(provide.Provide, _is_Provide_default);
+  var requestedScopedValues$ = dart.privateName(provide, "ProvideMulti.requestedScopedValues");
+  var builder$0 = dart.privateName(provide, "ProvideMulti.builder");
+  var child$1 = dart.privateName(provide, "ProvideMulti.child");
+  var _update = dart.privateName(provide, "_update");
+  provide.ProvideMulti = class ProvideMulti extends framework.StatelessWidget {
+    get requestedScopedValues() {
+      return this[requestedScopedValues$];
+    }
+    set requestedScopedValues(value) {
+      super.requestedScopedValues = value;
+    }
+    get builder() {
+      return this[builder$0];
+    }
+    set builder(value) {
+      super.builder = value;
+    }
+    get child() {
+      return this[child$1];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    build(context) {
+      let t1, t0;
+      let providers = provide._InheritedProviders.of(context);
+      let values = new (T$.LinkedMapOfProviderScopeL$MapLOfTypeL$dynamic()).new();
+      let listenables = T$.JSArrayOfListenableL().of([]);
+      for (let providerScope of this.requestedScopedValues[$keys]) {
+        for (let type of this.requestedScopedValues[$_get](providerScope)) {
+          let provider = providers.getFromType(type, {scope: providerScope});
+          let value = provider.get(context);
+          listenables[$add](provide._getListenable(provider, value));
+          (t0 = values[$_get](providerScope), t0 == null ? (t1 = new (T$.LinkedMapOfTypeL$dynamic()).new(), values[$_set](providerScope, t1), t1) : t0)[$_set](type, value);
+        }
+      }
+      return new provide.ListeningBuilder.new({listenable: new provide._MergedListenable.new(listenables), child: this.child, builder: dart.fn((buildContext, child) => {
+          let t2, t1, t0;
+          t0 = buildContext;
+          t1 = child;
+          t2 = this[_update](context, values);
+          return this.builder(t0, t1, t2);
+        }, T$.BuildContextLAndWidgetLToWidgetL()), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16});
+    }
+    [_update](context, values) {
+      let providers = provide._InheritedProviders.of(context);
+      for (let providerScope of this.requestedScopedValues[$keys]) {
+        for (let type of this.requestedScopedValues[$_get](providerScope)) {
+          let provider = providers.getFromType(type, {scope: providerScope});
+          if (T$.ListenableL().is(provider)) {
+            let value = provider.get(context);
+            values[$_get](providerScope)[$_set](type, value);
+          }
+        }
+      }
+      return new provide.ProvidedValues.__(values);
+    }
+  };
+  (provide.ProvideMulti.new = function(opts) {
+    let t1, t0;
+    let builder = opts && 'builder' in opts ? opts.builder : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let requestedValues = opts && 'requestedValues' in opts ? opts.requestedValues : null;
+    let requestedScopedValues = opts && 'requestedScopedValues' in opts ? opts.requestedScopedValues : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[builder$0] = builder;
+    this[child$1] = child;
+    this[requestedScopedValues$] = (t0 = new (T$.LinkedMapOfProviderScopeL$ListLOfTypeL()).new(), (() => {
+      t0[$addAll]((t1 = requestedScopedValues, t1 == null ? new (T$.LinkedMapOfProviderScopeL$ListLOfTypeL()).new() : t1));
+      t0[$putIfAbsent](provide.Providers.defaultScope, dart.fn(() => {
+        let t1;
+        t1 = requestedValues;
+        return t1 == null ? T$.JSArrayOfTypeL().of([]) : t1;
+      }, T$.VoidToListLOfTypeL()));
+      return t0;
+    })());
+    provide.ProvideMulti.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = provide.ProvideMulti.prototype;
+  dart.addTypeTests(provide.ProvideMulti);
+  dart.addTypeCaches(provide.ProvideMulti);
+  dart.setMethodSignature(provide.ProvideMulti, () => ({
+    __proto__: dart.getMethods(provide.ProvideMulti.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    [_update]: dart.fnType(dart.legacy(provide.ProvidedValues), [dart.legacy(framework.BuildContext), dart.legacy(core.Map$(dart.legacy(provide.ProviderScope), dart.legacy(core.Map$(dart.legacy(core.Type), dart.dynamic))))])
+  }));
+  dart.setLibraryUri(provide.ProvideMulti, I[0]);
+  dart.setFieldSignature(provide.ProvideMulti, () => ({
+    __proto__: dart.getFields(provide.ProvideMulti.__proto__),
+    requestedScopedValues: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(provide.ProviderScope), dart.legacy(core.List$(dart.legacy(core.Type)))))),
+    builder: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext), dart.legacy(framework.Widget), dart.legacy(provide.ProvidedValues)]))),
+    child: dart.finalFieldType(dart.legacy(framework.Widget))
+  }));
+  var _values$ = dart.privateName(provide, "_values");
+  provide.ProvidedValues = class ProvidedValues extends core.Object {
+    get(T, opts) {
+      let t0;
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      return dart.legacy(T).as(this[_values$][$_get]((t0 = scope, t0 == null ? provide.Providers.defaultScope : t0))[$_get](dart.wrapType(dart.legacy(T))));
+    }
+  };
+  (provide.ProvidedValues.__ = function(_values) {
+    this[_values$] = _values;
+    ;
+  }).prototype = provide.ProvidedValues.prototype;
+  dart.addTypeTests(provide.ProvidedValues);
+  dart.addTypeCaches(provide.ProvidedValues);
+  dart.setMethodSignature(provide.ProvidedValues, () => ({
+    __proto__: dart.getMethods(provide.ProvidedValues.__proto__),
+    get: dart.gFnType(T => [dart.legacy(T), [], {scope: dart.legacy(provide.ProviderScope)}, {}])
+  }));
+  dart.setLibraryUri(provide.ProvidedValues, I[0]);
+  dart.setFieldSignature(provide.ProvidedValues, () => ({
+    __proto__: dart.getFields(provide.ProvidedValues.__proto__),
+    [_values$]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(provide.ProviderScope), dart.legacy(core.Map$(dart.legacy(core.Type), dart.dynamic)))))
+  }));
+  var _streamController = dart.privateName(provide, "_streamController");
+  var _value$ = dart.privateName(provide, "_value");
+  var _streamListener = dart.privateName(provide, "_streamListener");
+  const _is__ValueProvider_default = Symbol('_is__ValueProvider_default');
+  provide._ValueProvider$ = dart.generic(T => {
+    var TL = () => (TL = dart.constFn(dart.legacy(T)))();
+    var StreamControllerOfTL = () => (StreamControllerOfTL = dart.constFn(async.StreamController$(TL())))();
+    var StreamOfTL = () => (StreamOfTL = dart.constFn(async.Stream$(TL())))();
+    var StreamLOfTL = () => (StreamLOfTL = dart.constFn(dart.legacy(StreamOfTL())))();
+    class _ValueProvider extends provide.TypedProvider$(dart.legacy(T)) {
+      get(context) {
+        return this[_value$];
+      }
+      stream(context) {
+        let value = this[_value$];
+        if (T$.ListenableL().is(value)) {
+          this[_streamController] == null ? this[_streamController] = StreamControllerOfTL().broadcast() : null;
+          value.addListener(dart.bind(this, _streamListener));
+        } else {
+          dart.throw(new core.UnsupportedError.new("Cannot create stream from a value that is not Listenable"));
+        }
+        return StreamLOfTL().as(this[_streamController].stream);
+      }
+      dispose() {
+        return async.async(dart.void, (function* dispose() {
+          let t0;
+          let value = this[_value$];
+          if (T$.ListenableL().is(value)) {
+            value.removeListener(dart.bind(this, _streamListener));
+          }
+          yield (t0 = this[_streamController], t0 == null ? null : t0.close());
+        }).bind(this));
+      }
+      [_streamListener]() {
+        let t0;
+        t0 = this[_streamController];
+        t0 == null ? null : t0.add(this[_value$]);
+      }
+    }
+    (_ValueProvider.new = function(_value) {
+      this[_streamController] = null;
+      this[_value$] = _value;
+      ;
+    }).prototype = _ValueProvider.prototype;
+    dart.addTypeTests(_ValueProvider);
+    _ValueProvider.prototype[_is__ValueProvider_default] = true;
+    dart.addTypeCaches(_ValueProvider);
+    dart.setMethodSignature(_ValueProvider, () => ({
+      __proto__: dart.getMethods(_ValueProvider.__proto__),
+      get: dart.fnType(dart.legacy(T), [dart.legacy(framework.BuildContext)]),
+      stream: dart.fnType(dart.legacy(async.Stream$(dart.legacy(T))), [dart.legacy(framework.BuildContext)]),
+      dispose: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+      [_streamListener]: dart.fnType(dart.void, [])
+    }));
+    dart.setLibraryUri(_ValueProvider, I[0]);
+    dart.setFieldSignature(_ValueProvider, () => ({
+      __proto__: dart.getFields(_ValueProvider.__proto__),
+      [_value$]: dart.finalFieldType(dart.legacy(T)),
+      [_streamController]: dart.fieldType(dart.legacy(async.StreamController))
+    }));
+    return _ValueProvider;
+  });
+  provide._ValueProvider = provide._ValueProvider$();
+  dart.addTypeTests(provide._ValueProvider, _is__ValueProvider_default);
+  var _initalizer$ = dart.privateName(provide, "_initalizer");
+  const _is__LazyProvider_default = Symbol('_is__LazyProvider_default');
+  provide._LazyProvider$ = dart.generic(T => {
+    var TL = () => (TL = dart.constFn(dart.legacy(T)))();
+    var StreamControllerOfTL = () => (StreamControllerOfTL = dart.constFn(async.StreamController$(TL())))();
+    var StreamOfTL = () => (StreamOfTL = dart.constFn(async.Stream$(TL())))();
+    var StreamLOfTL = () => (StreamLOfTL = dart.constFn(dart.legacy(StreamOfTL())))();
+    const dispose = Symbol("dispose");
+    const ChangeNotifier_TypedProvider$36 = class ChangeNotifier_TypedProvider extends change_notifier.ChangeNotifier {};
+    (ChangeNotifier_TypedProvider$36.new = function() {
+      ChangeNotifier_TypedProvider$36.__proto__.new.call(this);
+    }).prototype = ChangeNotifier_TypedProvider$36.prototype;
+    dart.applyMixin(ChangeNotifier_TypedProvider$36, provide.TypedProvider$(dart.legacy(T)));
+    class _LazyProvider extends ChangeNotifier_TypedProvider$36 {
+      dispose() {
+        return async.async(dart.void, (function* dispose$() {
+          let t0, t0$;
+          let value = this[_value$];
+          if (T$.ListenableL().is(value)) {
+            t0 = value;
+            (() => {
+              t0.removeListener(dart.bind(this, _streamListener));
+              t0.removeListener(dart.bind(this, 'notifyListeners'));
+              return t0;
+            })();
+          }
+          yield (t0$ = this[_streamController], t0$ == null ? null : t0$.close());
+          this[_value$] = null;
+          this[dispose]();
+        }).bind(this));
+      }
+      get(context) {
+        let t1, t0;
+        let value = null;
+        if (this[_value$] == null) {
+          value = (t0 = this[_value$], t0 == null ? this[_value$] = (t1 = context, this[_initalizer$](t1)) : t0);
+          if (T$.ListenableL().is(value)) {
+            value.addListener(dart.bind(this, 'notifyListeners'));
+          }
+        }
+        return this[_value$];
+      }
+      stream(context) {
+        let value = this[_value$];
+        if (T$.ListenableL().is(value)) {
+          this[_streamController] == null ? this[_streamController] = StreamControllerOfTL().broadcast() : null;
+          value.addListener(dart.bind(this, _streamListener));
+        } else {
+          dart.throw(new core.UnsupportedError.new("Cannot create stream from a value that is not Listenable"));
+        }
+        return StreamLOfTL().as(this[_streamController].stream);
+      }
+      [_streamListener]() {
+        let t0;
+        t0 = this[_streamController];
+        t0 == null ? null : t0.add(this[_value$]);
+      }
+      [dispose]() {
+        return super.dispose();
+      }
+    }
+    (_LazyProvider.new = function(_initalizer) {
+      this[_value$] = null;
+      this[_streamController] = null;
+      this[_initalizer$] = _initalizer;
+      _LazyProvider.__proto__.new.call(this);
+      ;
+    }).prototype = _LazyProvider.prototype;
+    dart.addTypeTests(_LazyProvider);
+    _LazyProvider.prototype[_is__LazyProvider_default] = true;
+    dart.addTypeCaches(_LazyProvider);
+    dart.setMethodSignature(_LazyProvider, () => ({
+      __proto__: dart.getMethods(_LazyProvider.__proto__),
+      dispose: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+      get: dart.fnType(dart.legacy(T), [dart.legacy(framework.BuildContext)]),
+      stream: dart.fnType(dart.legacy(async.Stream$(dart.legacy(T))), [dart.legacy(framework.BuildContext)]),
+      [_streamListener]: dart.fnType(dart.void, [])
+    }));
+    dart.setLibraryUri(_LazyProvider, I[0]);
+    dart.setFieldSignature(_LazyProvider, () => ({
+      __proto__: dart.getFields(_LazyProvider.__proto__),
+      [_initalizer$]: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(T), [dart.legacy(framework.BuildContext)]))),
+      [_value$]: dart.fieldType(dart.legacy(T)),
+      [_streamController]: dart.fieldType(dart.legacy(async.StreamController))
+    }));
+    return _LazyProvider;
+  });
+  provide._LazyProvider = provide._LazyProvider$();
+  dart.addTypeTests(provide._LazyProvider, _is__LazyProvider_default);
+  const _is__FactoryProvider_default = Symbol('_is__FactoryProvider_default');
+  provide._FactoryProvider$ = dart.generic(T => {
+    const Object_TypedProvider$36 = class Object_TypedProvider extends core.Object {};
+    (Object_TypedProvider$36.new = function() {
+    }).prototype = Object_TypedProvider$36.prototype;
+    dart.applyMixin(Object_TypedProvider$36, provide.TypedProvider$(dart.legacy(T)));
+    class _FactoryProvider extends Object_TypedProvider$36 {
+      get(context) {
+        let t0;
+        t0 = context;
+        return this.providerFunction(t0);
+      }
+      stream(context) {
+        return dart.throw(new core.UnsupportedError.new("Stream not supported for factory providers"));
+      }
+      dispose() {
+        return async.async(dart.void, function* dispose() {
+        });
+      }
+    }
+    (_FactoryProvider.new = function(providerFunction) {
+      this.providerFunction = providerFunction;
+      ;
+    }).prototype = _FactoryProvider.prototype;
+    dart.addTypeTests(_FactoryProvider);
+    _FactoryProvider.prototype[_is__FactoryProvider_default] = true;
+    dart.addTypeCaches(_FactoryProvider);
+    dart.setMethodSignature(_FactoryProvider, () => ({
+      __proto__: dart.getMethods(_FactoryProvider.__proto__),
+      get: dart.fnType(dart.legacy(T), [dart.legacy(framework.BuildContext)]),
+      stream: dart.fnType(dart.legacy(async.Stream$(dart.legacy(T))), [dart.legacy(framework.BuildContext)]),
+      dispose: dart.fnType(dart.legacy(async.Future$(dart.void)), [])
+    }));
+    dart.setLibraryUri(_FactoryProvider, I[0]);
+    dart.setFieldSignature(_FactoryProvider, () => ({
+      __proto__: dart.getFields(_FactoryProvider.__proto__),
+      providerFunction: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(T), [dart.legacy(framework.BuildContext)])))
+    }));
+    return _FactoryProvider;
+  });
+  provide._FactoryProvider = provide._FactoryProvider$();
+  dart.addTypeTests(provide._FactoryProvider, _is__FactoryProvider_default);
+  var _listener = dart.privateName(provide, "_listener");
+  var _lastValue = dart.privateName(provide, "_lastValue");
+  var _stream = dart.privateName(provide, "_stream");
+  const _is__StreamProvider_default = Symbol('_is__StreamProvider_default');
+  provide._StreamProvider$ = dart.generic(T => {
+    var TL = () => (TL = dart.constFn(dart.legacy(T)))();
+    var TLToNull = () => (TLToNull = dart.constFn(dart.fnType(core.Null, [TL()])))();
+    const dispose = Symbol("dispose");
+    const ChangeNotifier_TypedProvider$36 = class ChangeNotifier_TypedProvider extends change_notifier.ChangeNotifier {};
+    (ChangeNotifier_TypedProvider$36.new = function() {
+      ChangeNotifier_TypedProvider$36.__proto__.new.call(this);
+    }).prototype = ChangeNotifier_TypedProvider$36.prototype;
+    dart.applyMixin(ChangeNotifier_TypedProvider$36, provide.TypedProvider$(dart.legacy(T)));
+    class _StreamProvider extends ChangeNotifier_TypedProvider$36 {
+      stream(context) {
+        return this[_stream];
+      }
+      get(context) {
+        return this[_lastValue];
+      }
+      dispose() {
+        return async.async(dart.void, (function* dispose$() {
+          yield this[_listener].cancel();
+          this[dispose]();
+        }).bind(this));
+      }
+      [dispose]() {
+        return super.dispose();
+      }
+    }
+    (_StreamProvider.new = function(stream, opts) {
+      let initialValue = opts && 'initialValue' in opts ? opts.initialValue : null;
+      this[_listener] = null;
+      this[_lastValue] = initialValue;
+      this[_stream] = dart.test(stream.isBroadcast) ? stream : stream.asBroadcastStream();
+      _StreamProvider.__proto__.new.call(this);
+      this[_listener] = this[_stream].listen(dart.fn(data => {
+        if (!dart.equals(this[_lastValue], data)) {
+          this[_lastValue] = data;
+          this.notifyListeners();
+        }
+      }, TLToNull()));
+    }).prototype = _StreamProvider.prototype;
+    dart.addTypeTests(_StreamProvider);
+    _StreamProvider.prototype[_is__StreamProvider_default] = true;
+    dart.addTypeCaches(_StreamProvider);
+    dart.setMethodSignature(_StreamProvider, () => ({
+      __proto__: dart.getMethods(_StreamProvider.__proto__),
+      stream: dart.fnType(dart.legacy(async.Stream$(dart.legacy(T))), [dart.legacy(framework.BuildContext)]),
+      get: dart.fnType(dart.legacy(T), [dart.legacy(framework.BuildContext)]),
+      dispose: dart.fnType(dart.legacy(async.Future$(dart.void)), [])
+    }));
+    dart.setLibraryUri(_StreamProvider, I[0]);
+    dart.setFieldSignature(_StreamProvider, () => ({
+      __proto__: dart.getFields(_StreamProvider.__proto__),
+      [_stream]: dart.finalFieldType(dart.legacy(async.Stream$(dart.legacy(T)))),
+      [_lastValue]: dart.fieldType(dart.legacy(T)),
+      [_listener]: dart.fieldType(dart.legacy(async.StreamSubscription))
+    }));
+    return _StreamProvider;
+  });
+  provide._StreamProvider = provide._StreamProvider$();
+  dart.addTypeTests(provide._StreamProvider, _is__StreamProvider_default);
+  var parent$ = dart.privateName(provide, "_InheritedProviders.parent");
+  var providers$0 = dart.privateName(provide, "_InheritedProviders.providers");
+  provide._InheritedProviders = class _InheritedProviders extends framework.InheritedWidget {
+    get parent() {
+      return this[parent$];
+    }
+    set parent(value) {
+      super.parent = value;
+    }
+    get providers() {
+      return this[providers$0];
+    }
+    set providers(value) {
+      super.providers = value;
+    }
+    static of(context) {
+      let widget = context.dependOnInheritedWidgetOfExactType(T$.InheritedWidgetL(), {aspect: dart.wrapType(provide._InheritedProviders)});
+      return T$._InheritedProvidersL().is(widget) ? widget : null;
+    }
+    updateShouldNotify(oldWidget) {
+      let t0, t0$;
+      T$._InheritedProvidersL().as(oldWidget);
+      t0$ = (t0 = this.parent, t0 == null ? null : t0.updateShouldNotify(oldWidget.parent));
+      return t0$ == null ? false || !dart.equals(this.providers, oldWidget.providers) : t0$;
+    }
+    getValue(T, opts) {
+      let t1, t0;
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      return dart.legacy(provide.Provider$(dart.legacy(T))).as((t0 = this.providers.getFromType(dart.wrapType(dart.legacy(T)), {scope: scope}), t0 == null ? (t1 = this.parent, t1 == null ? null : t1.getValue(dart.legacy(T), {scope: scope})) : t0));
+    }
+    getFromType(type, opts) {
+      let t1, t0;
+      let scope = opts && 'scope' in opts ? opts.scope : null;
+      t0 = this.providers.getFromType(type, {scope: scope});
+      return t0 == null ? (t1 = this.parent, t1 == null ? null : t1.getFromType(type, {scope: scope})) : t0;
+    }
+  };
+  (provide._InheritedProviders.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let providers = opts && 'providers' in opts ? opts.providers : null;
+    let parent = opts && 'parent' in opts ? opts.parent : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[providers$0] = providers;
+    this[parent$] = parent;
+    provide._InheritedProviders.__proto__.new.call(this, {child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = provide._InheritedProviders.prototype;
+  dart.addTypeTests(provide._InheritedProviders);
+  dart.addTypeCaches(provide._InheritedProviders);
+  dart.setMethodSignature(provide._InheritedProviders, () => ({
+    __proto__: dart.getMethods(provide._InheritedProviders.__proto__),
+    updateShouldNotify: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    getValue: dart.gFnType(T => [dart.legacy(provide.Provider$(dart.legacy(T))), [], {scope: dart.legacy(provide.ProviderScope)}, {}]),
+    getFromType: dart.fnType(dart.legacy(provide.Provider), [dart.legacy(core.Type)], {scope: dart.legacy(provide.ProviderScope)}, {})
+  }));
+  dart.setLibraryUri(provide._InheritedProviders, I[0]);
+  dart.setFieldSignature(provide._InheritedProviders, () => ({
+    __proto__: dart.getFields(provide._InheritedProviders.__proto__),
+    parent: dart.finalFieldType(dart.legacy(provide._InheritedProviders)),
+    providers: dart.finalFieldType(dart.legacy(provide.Providers))
+  }));
+  var builder$1 = dart.privateName(provide, "ListeningBuilder.builder");
+  var child$2 = dart.privateName(provide, "ListeningBuilder.child");
+  provide.ListeningBuilder = class ListeningBuilder extends transitions.AnimatedWidget {
+    get builder() {
+      return this[builder$1];
+    }
+    set builder(value) {
+      super.builder = value;
+    }
+    get child() {
+      return this[child$2];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    build(context) {
+      let t1, t0;
+      t0 = context;
+      t1 = this.child;
+      return this.builder(t0, t1);
+    }
+  };
+  (provide.ListeningBuilder.new = function(opts) {
+    let listenable = opts && 'listenable' in opts ? opts.listenable : null;
+    let builder = opts && 'builder' in opts ? opts.builder : null;
+    let key = opts && 'key' in opts ? opts.key : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[builder$1] = builder;
+    this[child$2] = child;
+    if (!(builder != null)) dart.assertFailed(null, I[1], 607, 16, "builder != null");
+    provide.ListeningBuilder.__proto__.new.call(this, {key: key, listenable: listenable, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = provide.ListeningBuilder.prototype;
+  dart.addTypeTests(provide.ListeningBuilder);
+  dart.addTypeCaches(provide.ListeningBuilder);
+  dart.setMethodSignature(provide.ListeningBuilder, () => ({
+    __proto__: dart.getMethods(provide.ListeningBuilder.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(provide.ListeningBuilder, I[0]);
+  dart.setFieldSignature(provide.ListeningBuilder, () => ({
+    __proto__: dart.getFields(provide.ListeningBuilder.__proto__),
+    builder: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext), dart.legacy(framework.Widget)]))),
+    child: dart.finalFieldType(dart.legacy(framework.Widget))
+  }));
+  var _children$ = dart.privateName(provide, "_children");
+  var _unlisten = dart.privateName(provide, "_unlisten");
+  provide._MergedListenable = class _MergedListenable extends change_notifier.ChangeNotifier {
+    dispose() {
+      if (dart.test(this.hasListeners)) {
+        this[_unlisten]();
+      }
+      super.dispose();
+    }
+    addListener(listener) {
+      let t0;
+      if (!dart.test(this.hasListeners)) {
+        for (let child of this[_children$]) {
+          t0 = child;
+          t0 == null ? null : t0.addListener(dart.bind(this, 'notifyListeners'));
+        }
+      }
+      super.addListener(listener);
+    }
+    removeListener(listener) {
+      super.removeListener(listener);
+      if (!dart.test(this.hasListeners)) {
+        this[_unlisten]();
+      }
+    }
+    [_unlisten]() {
+      let t0;
+      for (let child of this[_children$]) {
+        t0 = child;
+        t0 == null ? null : t0.removeListener(dart.bind(this, 'notifyListeners'));
+      }
+    }
+  };
+  (provide._MergedListenable.new = function(_children) {
+    this[_children$] = _children;
+    provide._MergedListenable.__proto__.new.call(this);
+    ;
+  }).prototype = provide._MergedListenable.prototype;
+  dart.addTypeTests(provide._MergedListenable);
+  dart.addTypeCaches(provide._MergedListenable);
+  dart.setMethodSignature(provide._MergedListenable, () => ({
+    __proto__: dart.getMethods(provide._MergedListenable.__proto__),
+    addListener: dart.fnType(dart.void, [dart.legacy(dart.fnType(dart.void, []))]),
+    removeListener: dart.fnType(dart.void, [dart.legacy(dart.fnType(dart.void, []))]),
+    [_unlisten]: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(provide._MergedListenable, I[0]);
+  dart.setFieldSignature(provide._MergedListenable, () => ({
+    __proto__: dart.getFields(provide._MergedListenable.__proto__),
+    [_children$]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(change_notifier.Listenable))))
+  }));
+  provide._getListenable = function _getListenable(provider, value) {
+    return T$.ListenableL().as(T$.ListenableL().is(provider) ? provider : T$.ListenableL().is(value) ? value : null);
+  };
+  dart.trackLibraries("packages/provide/provide.dart", {
+    "package:provide/provide.dart": provide
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["provide.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAee;;;;;;IAGG;;;;;;IAIL;;;;;;;AAO4B,wDAC5B,uBAAkB,kCAA6B;IAAQ;;;QAJ9C;QAAsB;QAAgB;;;;;AADpD;;EACoE;;;;;;;;;;;;;;;;;;;;;UAwBhD;AACxB,YAAO,6CACI,uBACI,wBACiB,+BAAG,OAAO;IAC5C;;AAGoB;QACZ;AACN,sBAAI;gBACI,AAAU;;MAEpB;;;;;;;QAlBoB;QACD;QACA;;;;AAHnB;;EAGqC;;;;;;;;;;;;;;;;;;IAyBxB;;;;;;;AAOX,YAAyB,uBAAR;IACnB;;wCALyB;;;EAAM;;;;;;;;;;;;;;;;;yBA0B8B;;UACtC;AACnB;;QAAa,cAAW,SAAS,UAAS,KAAK;;;IAAC;eAMxB;UAAyB;WAE9B,YAAd,AAAS,QAAD;MAEf,AAAyB,yBAAN,KAAK,wCAAO,QAAQ;IACzC;eAMoC;UAA0B;AAC5D,eAAS,QAAS,AAAU,UAAD;AACzB,yBAAI,AAAM,KAAD,MAAQ,AAAM,AAAM,KAAP;AACpB,cAAqB,YAAjB,AAAM,AAAM,KAAP;YACP,WAAM,2BAAa,8DACX,AAAM,KAAD;;UAEf,WAAM,2BAAa,oCAA0B,AAAM,KAAD,4CACxC,AAAM,AAAM,KAAP;;;MAInB,AAA0B,yBAAP,KAAK,WAAS,SAAS;IAC5C;gBAG2B;AACzB,eAAW,QAAS,AAAM,AAAW,MAAZ;QACvB,gBAAW,AAAM,KAAD,qBAAoB,KAAK,WAAU,KAAK;;IAE5D;oBAMuB;UAAsB;MAC3C,6BAAiB,wCAAM,KAAK,WAAU,KAAK;IAC7C;;AAGoB;AAClB,iBAAW,WAAY,AAAW;AAChC,mBAAW,WAAY,AAAS,SAAD;kBACvB,AAAS,QAAD;;;MAGpB;;gBAO0B;UAAqB;AAC7C,YAAO,AAAyB,0BAAN,KAAK,SAAE,IAAI;IACvC;yBAEgD;;AAC5C;YAAiB,KAAN,KAAK,EAAL,aAAS;WAAV;YAAwB,oBAAI,6CAA5B,WAAO;IAAuB;;;IA/EW,mBAAa;;EAGzD;;;;;;;;;;;;;;;;;;;MAGgB,8BAAY;;;;;;;mBAwGd;AAAU,iEAAe,KAAK;MAAC;sBAOV;AAC1C,gEAAiB;MAAS;yBAImB;AAC7C,mEAAoB;MAAS;oBAMC;YAAW;AACzC,kEAAmB,MAAM,iBAAgB,YAAY;MAAC;;;;;;;;;;;;;;;;;AAOzC;MAAC;;;;IACpB;;;;;;;;;;;;;;;;;;;;;MAewB;;;;;;MAGT;;;;;;MAGO;;;;;;sBAMW;YAAwB;AAC/C,uBAA+B,AAAY,+BAAT,OAAO,mCAAqB,KAAK;cAClE,QAAQ;AAEf,cAAO,AAAS,SAAD,KAAK,OAAO;MAC7B;uBAIwC;YAAwB;AACxD,uBAA+B,AAAY,+BAAT,OAAO,mCAAqB,KAAK;cAClE,QAAQ;AAEf,cAAO,AAAS,SAAD,QAAQ,OAAO;MAChC;YAG0B;AAClB,uBAA+B,AAAY,+BAAT,OAAO,yBAAqB;AAC9D,oBAAQ,AAAS,QAAD,KAAK,OAAO;AAC5B,yBAAa,uBAAe,QAAQ,EAAE,KAAK;AAEjD,YAAa,oBAAT,QAAQ;AACV,gBAAO,+CACO,UAAU,SACf,qBACE,SAAC,cAAc;;AACpB,mBAAQ,YAAY;mBAAE,KAAK;mBAAE,AAAS,QAAD,KAAK,OAAO;oBAA1C;;cAER,KAAU,oBAAN,KAAK;AACd,gBAAO,+CACO,UAAU,SACf,qBACE,SAAC,cAAc;;AAAU,mBAAQ,YAAY;mBAAE,KAAK;mBAAE,KAAK;oBAA3B;;;QAI7C,WAAM,2BAAa;MAGrB;;;UA3C8B;UAAc;UAAY;;;;;AAAlD;;IAAyD;;;;;;;;;;;;;;;;;;;;;;;;IA6D1B;;;;;;IAGb;;;;;;IAGX;;;;;;UAca;;AAClB,sBAAgC,+BAAG,OAAO;AAE1C,mBAA4C;AAC5C,wBAA0B;AAEhC,eAAW,gBAAiB,AAAsB;AAChD,iBAAW,OAAQ,AAAqB,mCAAC,aAAa;AAC9C,yBAAW,AAAU,SAAD,aAAa,IAAI,UAAS,aAAa;AAC3D,sBAAQ,AAAS,QAAD,KAAK,OAAO;UAClC,AAAY,WAAD,OAAK,uBAAe,QAAQ,EAAE,KAAK;UAChB,MAA7B,AAAM,MAAA,QAAC,aAAa,GAAE,mBAAI,2CAA1B,AAAM,MAAA,QAAC,aAAa,wBAAU,IAAI,EAAI,KAAK;;;AAIhD,YAAO,+CACO,kCAAkB,WAAW,UAClC,qBACE,SAAC,cAAc;;AACpB,eAAQ,YAAY;eAAE,KAAK;eAAE,cAAQ,OAAO,EAAE,MAAM;gBAA7C;;IAEf;cAKiB,SAAgD;AACzD,sBAAgC,+BAAG,OAAO;AAEhD,eAAW,gBAAiB,AAAsB;AAChD,iBAAW,OAAQ,AAAqB,mCAAC,aAAa;AAC9C,yBAAW,AAAU,SAAD,aAAa,IAAI,UAAS,aAAa;AACjE,cAAa,oBAAT,QAAQ;AACJ,wBAAQ,AAAS,QAAD,KAAK,OAAO;YAClC,AAAM,AAAe,MAAf,QAAC,aAAa,SAAE,IAAI,EAAI,KAAK;;;;AAKzC,YAAsB,+BAAE,MAAM;IAChC;;;;QAjDiB;QACV;QACM;QACoB;;;;yCACJ;MACnB,aAA6B,KAAtB,qBAAqB,EAArB,aAAyB;MAChC,iBAAsB,gCAAc;;AAAM,4BAAe;cAAf,cAAmB;;;;AAPvE;;EAO0E;;;;;;;;;;;;;;;;;;;UAuDlD;AACpB,+BAAA,AAAO,AAAiC,uBAA1B,KAAN,KAAK,EAAL,aAAmB;IAAgB;;wCALzB;;;EAAQ;;;;;;;;;;;;;;;;;;;;;;UA4BX;AAAY;MAAM;aAGP;AACtB,oBAAQ;AACd,YAAU,oBAAN,KAAK;UACW,kCAAlB,0BAAsB;UACtB,AAAM,KAAD,aAAa;;UAElB,WAAM;;AAIR,gCAAO,AAAkB;MAC3B;;AAKoB;;AACZ,sBAAQ;AACd,cAAU,oBAAN,KAAK;YACP,AAAM,KAAD,gBAAgB;;+CAEjB,oBAAmB;QAC3B;;;;aAGE;4BAAmB,OAAI;MACzB;;mCAboB;MAnBH;;;IAmBU;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA+BP;;AACZ,sBAAQ;AACd,cAAU,oBAAN,KAAK;iBACP,KAAK;;cAAE,kBAAe;cAAkB,kBAAe;;;;gDAEnD,qBAAmB;UACzB;UACM;QACR;;UAGmB;;AAGf;AACF,YAAI,AAAO;UACT,SAAe,KAAP,eAAO,aAAP,sBAAuB,OAAO,EAAR;AAC9B,cAAU,oBAAN,KAAK;YACP,AAAM,KAAD,aAAa;;;AAGtB,cAAO;MACT;aAG8B;AACtB,oBAAQ;AACd,YAAU,oBAAN,KAAK;UACW,kCAAlB,0BAAsB;UACtB,AAAM,KAAD,aAAa;;UAElB,WAAM;;AAIR,gCAAO,AAAkB;MAC3B;;;aAGE;4BAAmB,OAAI;MACzB;;;;;kCA3CmB;MAHjB;MACe;;AAEjB;;IAA+B;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAyDZ;;AAAY,aAAiB,OAAO;cAAR;MAAS;aAG1B;AAC1B,0BAAM;MAA8D;;AAGpD;QAAU;;;qCAVR;;;IAAiB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aAmCT;AAAY;MAAO;UAG9B;AAAY;MAAU;;AAGrB;gBACZ,AAAU;UACV;QACR;;;;;;oCArB0B;UAAW;MAHlB;yBAIA,YAAY;gCACf,AAAO,MAAD,gBAAe,MAAM,GAAG,AAAO,MAAD;AAFpD;MAGE,kBAAY,AAAQ,qBAAO,QAAC;AAC1B,yBAAI,kBAAc,IAAI;UACpB,mBAAa,IAAI;UACjB;;;IAGN;;;;;;;;;;;;;;;;;;;;;;;;IAqB0B;;;;;;IAEV;;;;;;cAM2B;AACnC,mBAAS,AAAQ,OAAD;AACtB,YAAc,8BAAP,MAAM,IAA0B,MAAM;IAC/C;uBAG4C;;;AAC1C,+BAAO,oBAAQ,sBAAmB,AAAU,SAAD;YAApC,qCACM,gBAAa,AAAU,SAAD;IACrC;;;UAGuC;AACrC,gEAA8C,KAAvC,AAAU,kEAAsB,KAAK,IAA3B,gCACb,oBAAQ,oCAAmB,KAAK;IACtC;gBAG0B;;UAAqB;AAC7C,WAAO,AAAU,2BAAY,IAAI,UAAS,KAAK;YAA9B,iCACb,oBAAQ,eAAY,IAAI,UAAS,KAAK;IAC5C;;;QAzBkC;QAAY;QAAgB;;;;AACxD,iEAAa,KAAK;;EAAC;;;;;;;;;;;;;;;;;;IA6CD;;;;;;IAcX;;;;;;UAGa;;AACxB,WAAe,OAAO;WAAE;YAAV;IAChB;;;QA3BuB;QACN;QACX;QACC;;;;UACM,OAAO;AACd,4DAAW,GAAG,cAAc,UAAU;;EAAC;;;;;;;;;;;;;;;;;AAqC3C,oBAAI;QACF;;MAEI;IACR;gBAG8B;;AAC5B,qBAAK;AACH,iBAAW,QAAS;eAClB,KAAK;UAAL,oBAAO,eAAY;;;MAGjB,kBAAY,QAAQ;IAC5B;mBAGiC;MACzB,qBAAe,QAAQ;AAC7B,qBAAK;QACH;;IAEJ;;;AAGE,eAAW,QAAS;aAClB,KAAK;QAAL,oBAAO,kBAAe;;IAE1B;;4CAhCuB;;AAAvB;;EAAiC;;;;;;;;;;;;;;mDApVA,UAAkB;AACjD,+BAAS,oBAAT,QAAQ,IAAiB,QAAQ,GAAS,oBAAN,KAAK,IAAiB,KAAK;EAAO","file":"../../../../../../packages/provide/provide.dart.lib.js"}');
+  // Exports:
+  return {
+    provide: provide
+  };
+}));
+
+//# sourceMappingURL=provide.dart.lib.js.map
