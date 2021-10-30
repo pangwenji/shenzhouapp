@@ -54,9 +54,6 @@ class _GoodsStatusState extends State<GoodsStatus> {
                   },
                 ),
               )
-              // PopupMenuButton(
-              //     itemBuilder: (BuildContext context) =>
-              //         <PopupMenuItem<String>>[this.selectIcon])
             ],
           ),
           body: TabBarView(

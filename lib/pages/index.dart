@@ -1,14 +1,15 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:shenzhouapp/components/bottom_tab.dart';
 import 'package:shenzhouapp/components/swiper_diy.dart';
+import 'package:shenzhouapp/model/courennt_index.dart';
 import 'package:shenzhouapp/pages/home.dart';
 import 'package:shenzhouapp/pages/message.dart';
 import 'package:shenzhouapp/pages/mine.dart';
-import 'package:shenzhouapp/provide/currentIndex_priovide.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:shenzhouapp/controller/current_index_controller.dart';
 
 class Index extends StatefulWidget {
   Index({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class Index extends StatefulWidget {
 }
 
 final List<Widget> _tabBodies = [HomePage(), MessagePage(), Mine()];
-int _currentIndex = 0;
+
 class _IndexState extends State<Index> {
   final List<BottomNavigationBarItem> bottomTab = [
     BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), title: Text('首页')),
@@ -27,26 +28,22 @@ class _IndexState extends State<Index> {
     BottomNavigationBarItem(
         icon: Icon(CupertinoIcons.person), title: Text('我的'))
   ];
+  CurrentIndexController currentIndexController =
+      Get.put(CurrentIndexController());
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-       appBar: AppBar(
-         title: Text('神州集运'),
-         centerTitle: true,
-       ),
-       bottomNavigationBar:BottomTabs(),
-       body:_tabBodies[_currentIndex]
+    return
+        GetBuilder<CurrentIndexController>(
+          builder: (controller) {
+         return Scaffold(
+            appBar: AppBar(
+              title: Text('神州集运'),
+              centerTitle: true,
+            ),
+            bottomNavigationBar: BottomTabs(),
+            body: _tabBodies[currentIndexController.count]
+          );
+      },
     );
-  }
-
-  void setIndex(int index) {
-    Consumer<CurrentIndexProvide>(builder: (context, countModel, child) {
-      print(index);
-      countModel.currentIndex = index;
-      return Center(
-        child: Text('树'),
-      );
-    });
   }
 }

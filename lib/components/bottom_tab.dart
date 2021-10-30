@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:shenzhouapp/provide/currentIndex_priovide.dart';
+import 'package:get/get.dart';
+import 'package:shenzhouapp/controller/current_index_controller.dart';
+import 'package:shenzhouapp/model/courennt_index.dart';
 
 class BottomTabs extends StatelessWidget {
+  CurrentIndexController currentIndexController =
+      Get.put(CurrentIndexController());
   BottomTabs({Key? key}) : super(key: key);
   final List<BottomNavigationBarItem> bottomTab = [
     BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), title: Text('首页')),
@@ -11,15 +15,14 @@ class BottomTabs extends StatelessWidget {
     BottomNavigationBarItem(
         icon: Icon(CupertinoIcons.person), title: Text('我的'))
   ];
-  final int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      currentIndex: currentIndex,
+      currentIndex: currentIndexController.count,
       items: bottomTab,
       onTap: (index) {
-        // Provide.value<CurrentIndexProvide>(context).changeIndex(index);
+        currentIndexController.increment(index);
       },
     );
   }

@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:shenzhouapp/components/distribution_mode.dart';
-import 'package:shenzhouapp/pages/consolidated_goods.dart';
 import 'package:shenzhouapp/pages/coupon.dart';
 import 'package:shenzhouapp/pages/goodsStatus.dart';
 import 'package:shenzhouapp/pages/home.dart';
@@ -27,11 +26,6 @@ class Pages {
       GetPage(
         name: Routes.goodsStatus, 
         page: ()=>GoodsStatus(),
-        transition: Transition.fadeIn
-      ),
-      GetPage(
-        name: Routes.consolidatedGoods, 
-        page: ()=>ConsolidatedGoods(),
         transition: Transition.fadeIn
       ),
       GetPage(
