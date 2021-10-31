@@ -18,7 +18,10 @@ class Index extends StatefulWidget {
   _IndexState createState() => _IndexState();
 }
 
-final List<Widget> _tabBodies = [HomePage(), MessagePage(), Mine()];
+final List<Widget> _tabBodies = [
+  HomePage(),
+  MessagePage(), 
+  Mine()];
 
 class _IndexState extends State<Index> {
   final List<BottomNavigationBarItem> bottomTab = [
@@ -36,10 +39,10 @@ class _IndexState extends State<Index> {
         GetBuilder<CurrentIndexController>(
           builder: (controller) {
          return Scaffold(
-            appBar: AppBar(
-              title: Text('神州集运'),
-              centerTitle: true,
-            ),
+            // appBar: AppBar(
+            //   title: Text('神州集运'),
+            //   centerTitle: true,
+            // ),
             bottomNavigationBar: BottomTabs(),
             body: _tabBodies[currentIndexController.count]
           );

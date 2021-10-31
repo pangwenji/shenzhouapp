@@ -61,8 +61,4 @@ class _GoodsStatusState extends State<GoodsStatus> {
           ),
         ));
   }
-
-  Widget selectIcon() {
-    return Text('dgd');
-  }
 }

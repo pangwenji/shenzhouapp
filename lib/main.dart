@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluro/fluro.dart';
 import 'package:shenzhouapp/provide/currentIndex_priovide.dart';
 import 'package:shenzhouapp/router/pages.dart';
 import 'package:shenzhouapp/router/routes.dart';
