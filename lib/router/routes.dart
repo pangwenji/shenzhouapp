@@ -14,4 +14,6 @@ class Routes {
   static String noviceTutorial = '/noviceTutorial';
   static String distributionMode = '/distributionMode';
   static String home = '/';
+  static String volumeTrial = '/volumeTrial';
+
 }

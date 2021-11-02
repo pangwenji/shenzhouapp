@@ -16,7 +16,8 @@ class TrailSeries extends StatelessWidget {
           _container(context, '港澳台集运试算系列'),
           _boxContainer('运费试算', '计算运费', 'images/freight.png', context,
               Routes.distributionMode),
-          _boxContainer('体积重试算', '体积重', 'images/calc.png', context, 'calc'),
+          _boxContainer(
+              '体积重试算', '体积重', 'images/calc.png', context, Routes.volumeTrial),
           _container(context, '国际转运试算系列'),
           _boxContainer('运费试算', '计算运费', 'images/yunfei.png', context, 'yunfei'),
           _boxContainer('体积重试算', '体积重', 'images/calcs.png', context, 'calcs')
@@ -43,11 +44,13 @@ class TrailSeries extends StatelessWidget {
                 bottom: BorderSide(width: 1.0, color: Colors.grey.shade200))),
         child: InkWell(
           onTap: () {
-            switch (route) {
-              case '/distributionMode':
-                Get.toNamed(route);
-                break;
-            }
+            // switch (route) {
+            //   case '/distributionMode':
+            //     Get.toNamed(route);
+            //     break;
+            // }
+            print(route);
+            Get.toNamed(route);
           },
           child: Row(
             children: [
@@ -69,7 +72,6 @@ class TrailSeries extends StatelessWidget {
               ))
             ],
           ),
-        )
-      );
+        ));
   }
 }
