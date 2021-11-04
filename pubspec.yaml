@@ -67,6 +67,8 @@ flutter:
    - images/calc.png
    - images/calcs.png
    - images/yunfei.png
+   - images/avatar.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -69,9 +69,11 @@ class TrailSeries extends StatelessWidget {
                   child: Icon(
                 Icons.arrow_forward_ios,
                 size: 15,
-              ))
+              )
+              )
             ],
           ),
-        ));
+        )
+      );
   }
 }
