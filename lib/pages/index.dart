@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:shenzhouapp/components/bottom_tab.dart';
 import 'package:shenzhouapp/components/swiper_diy.dart';
