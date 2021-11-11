@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shenzhouapp/components/_BoxItem.dart';
 import 'package:shenzhouapp/model/itemIcon.dart';
@@ -83,9 +84,10 @@ class _InforMationModeuleState extends State<InforMationModeule> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(10.0),
-        width: 350,
-        height: 230,
+        
+        margin: EdgeInsets.only(top:10.0),
+        width: ScreenUtil().setWidth(400),
+        height: ScreenUtil().setHeight(500),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5.0),
             color: Colors.grey.shade100),
@@ -94,20 +96,20 @@ class _InforMationModeuleState extends State<InforMationModeule> {
           padding: EdgeInsets.symmetric(vertical: 2),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 2,
+              mainAxisSpacing: 35,////垂直子Widget之间间距
+              crossAxisSpacing: 2,////纵轴间距
               childAspectRatio: 2),
           itemBuilder: (BuildContext context, int index) {
             return InkWell(
               child: Container(
-                width: 5.0,
-                height: 5.0,
+                width:ScreenUtil().setWidth(10),
+                height: ScreenUtil().setHeight(10),
                 child: Column(
                   children: [
                     Image.asset(
                       _itemIcon[index]['imageUrl'],
-                      width: 40.0,
-                      height: 40.0,
+                      width: ScreenUtil().setWidth(60),
+                      height: ScreenUtil().setHeight(60),
                     ),
                     Text(_itemIcon[index]['title'])
                   ],
@@ -127,6 +129,7 @@ class _InforMationModeuleState extends State<InforMationModeule> {
               },
             );
           },
-        ));
+        )
+      );
   }
 }

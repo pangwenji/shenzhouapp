@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:shenzhouapp/dataBase.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SwiperDiy extends StatelessWidget {
   SwiperDiy({Key? key}) : super(key: key);
    List<Image> images = [
@@ -26,11 +26,9 @@ class SwiperDiy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('数据');
-    print(DataBase.getSwiperData());
     return Container(
-      width:400,
-      height: 200,
+      width:ScreenUtil().setWidth(400),
+      height:ScreenUtil().setHeight(500),
       child: 
       Swiper(
         itemCount: images.length,
