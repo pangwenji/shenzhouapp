@@ -67,6 +67,7 @@ class Mine extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
+                            padding: EdgeInsets.all(5),
                             child: Image.asset(
                               'images/location.png',
                               width: 18,
@@ -96,17 +97,25 @@ class Mine extends StatelessWidget {
                         children: [
                           Container(
                             height: 60,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  width: 0.9,
+                                  color: Colors.grey.shade300
+                                )
+                              )
+                            ),
                             width: MediaQuery.of(context).size.width,
                             child: Row(
                               children: [
-                                  _itemContanier('今日收益（神州豆）','0.0'),
-                                  _itemContanier('本月收益（神州豆）','0.0'),
-                                  _itemContanier('历史收益（神州豆）','0.0')
-
-                                ],
+                                _itemContanier('今日收益（神州豆）', '0.0'),
+                                _itemContanier('本月收益（神州豆）', '0.0'),
+                                _itemContanier('历史收益（神州豆）', '0.0')
+                              ],
                             ),
                           ),
-                          Container()
+                          _threeContanier('images/team.png', '我的团队',true),
+                          _threeContanier('images/evaluate.png', '我的评价',false)
                         ],
                       ),
                     )
@@ -116,22 +125,58 @@ class Mine extends StatelessWidget {
             )));
   }
 
-  Widget _itemContanier(title,shuliang) {
+  Widget _itemContanier(title, shuliang) {
     return Expanded(
         flex: 1,
         child: Container(
-          color: Colors.red,
-          alignment: Alignment(0,10),
+          alignment: Alignment(0, 10),
           child: Column(
             children: [
               Text(shuliang),
-              Text(title,style: TextStyle(
-                 fontSize: 13
-              ),
+              Text(
+                title,
+                style: TextStyle(fontSize: 13),
+              )
+            ],
+          ),
+        ));
+  }
+
+  Widget _threeContanier(imageUrl, title,isShow) {
+    return Container(
+        height: 60,
+        decoration: BoxDecoration(
+          border: isShow ? Border(
+            bottom: BorderSide(
+              width: 0.9,
+              color: Colors.grey.shade300
             )
-          ],
-      ),
-    )
-    );
+          ):Border()
+        ),
+        child: InkWell(
+          onTap: () {},
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Image.asset(
+                  imageUrl,
+                  width: 18,
+                  height: 18,
+                ),
+              ),
+              Container(
+                width: 320,
+                child: Text(title),
+              ),
+              Container(
+                child: Icon(
+                  Icons.arrow_forward_ios,
+                  size: 10,
+                ),
+              )
+            ],
+          ),
+        ));
   }
 }

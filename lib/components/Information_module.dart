@@ -84,7 +84,6 @@ class _InforMationModeuleState extends State<InforMationModeule> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        
         margin: EdgeInsets.only(top:10.0),
         width: ScreenUtil().setWidth(400),
         height: ScreenUtil().setHeight(500),
