@@ -37,10 +37,6 @@ class _IndexState extends State<Index> {
         GetBuilder<CurrentIndexController>(
           builder: (controller) {
          return Scaffold(
-            // appBar: AppBar(
-            //   title: Text('神州集运'),
-            //   centerTitle: true,
-            // ),
             bottomNavigationBar: BottomTabs(),
             body: _tabBodies[currentIndexController.count]
           );
