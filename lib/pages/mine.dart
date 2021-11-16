@@ -11,9 +11,9 @@ class Mine extends StatelessWidget {
       {"image": "images/storeCard_tiem.png", "title": "储值卡"}
     ];
     final data2 = [
-      {"image": "images/cany.png", "title": "神州豆"},
-      {"image": "images/coupon_image.png", "title": "优惠卷"},
-      {"image": "images/storeCard_tiem.png", "title": "储值卡"}
+      {"image": "images/diamond.png", "title": "特权卡权益&激活"},
+      {"image": "images/gift.png", "title": "精美礼品"},
+      {"image": "images/integral.png", "title": "会员卡权益&升级"}
     ];
     return Scaffold(
         appBar: AppBar(
@@ -123,7 +123,8 @@ class Mine extends StatelessWidget {
                 //第四行
                 _fourContaier(true, data1),
                 //第五行
-                _fourContaier(false, data2)
+                _fourContaier(false, data2),
+                _threeContanier('images/reward.png', '邀约会员有奖', false)
               ],
             ),
           ),
@@ -137,7 +138,7 @@ class Mine extends StatelessWidget {
               bottom: BorderSide(width: 6, color: Colors.grey.shade300))),
       child: Column(
         children: [
-          _specItemContainer(flag,data),
+          _specItemContainer(flag, data),
           _threeContanier(data[1]['image'], data[1]['title'], true),
           _threeContanier(data[2]['image'], data[2]['title'], false),
         ],
@@ -145,44 +146,46 @@ class Mine extends StatelessWidget {
     );
   }
 
-  Widget _specItemContainer(flag,data) {
+  Widget _specItemContainer(flag, data) {
     return Container(
-      height: 60,
-      decoration: BoxDecoration(
-          border: Border(
-              bottom: BorderSide(width: 0.9, color: Colors.grey.shade300))),
-      child: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.all(5),
-            child: Image.asset(
-              data[0]['image'],
-              width: 18,
-              height: 18,
-            ),
+        height: 60,
+        decoration: BoxDecoration(
+            border: Border(
+                bottom: BorderSide(width: 0.9, color: Colors.grey.shade300))),
+        child: InkWell(
+          onTap: () {},
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Image.asset(
+                  data[0]['image'],
+                  width: 18,
+                  height: 18,
+                ),
+              ),
+              Container(
+                width: flag ? 290 : 315,
+                child: Text(data[0]['title']),
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 5),
+                child: flag
+                    ? Text(
+                        '100',
+                        style: TextStyle(color: Colors.red.shade400),
+                      )
+                    : Text(''),
+              ),
+              Container(
+                child: Icon(
+                  Icons.arrow_forward_ios,
+                  size: 10,
+                ),
+              )
+            ],
           ),
-          Container(
-            width: flag ? 290 : 315,
-            child: Text(data[0]['title']),
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 5),
-            child: flag
-                ? Text(
-                    '100',
-                    style: TextStyle(color: Colors.red.shade400),
-                  )
-                : Text(''),
-          ),
-          Container(
-            child: Icon(
-              Icons.arrow_forward_ios,
-              size: 10,
-            ),
-          )
-        ],
-      ),
-    );
+        ));
   }
 
   Widget _itemContanier(title, shuliang) {
