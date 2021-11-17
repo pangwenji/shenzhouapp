@@ -124,7 +124,7 @@ class _MyDiaLogState extends State<MyDiaLog> {
             ],
           ),
           width: 360,
-          height: 420,
+          height: 520,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
         ),
