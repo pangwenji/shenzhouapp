@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shenzhouapp/router/routes.dart';
 
 class SetAddress extends StatelessWidget {
   const SetAddress({Key? key}) : super(key: key);
@@ -17,7 +19,9 @@ class SetAddress extends StatelessWidget {
                 '新增',
                 style: TextStyle(fontSize: 16),
               ),
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(Routes.newAddress);
+              },
             ),
           )
         ],
@@ -44,11 +48,9 @@ class SetAddress extends StatelessWidget {
   }
 
   Widget _text(title) {
-    return Text(title,
-        style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey
-            ),
+    return Text(
+      title,
+      style: TextStyle(fontSize: 14, color: Colors.grey),
     );
   }
 }

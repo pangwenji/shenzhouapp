@@ -4,6 +4,7 @@ import 'package:shenzhouapp/pages/coupon.dart';
 import 'package:shenzhouapp/pages/goodsStatus.dart';
 import 'package:shenzhouapp/pages/home.dart';
 import 'package:shenzhouapp/pages/my_order.dart';
+import 'package:shenzhouapp/pages/new_address.dart';
 import 'package:shenzhouapp/pages/novice_tutorial.dart';
 import 'package:shenzhouapp/pages/registered_goods.dart';
 import 'package:shenzhouapp/pages/savings_deposit_card.dart';
@@ -14,6 +15,11 @@ import 'package:shenzhouapp/router/routes.dart';
 
 class Pages {
   static final routes = [
+     GetPage(  
+        name: Routes.newAddress, 
+        page: ()=>NewAddress(),
+        transition: Transition.fadeIn
+      ),
       GetPage(  
         name: Routes.home, 
         page: ()=>HomePage(),
