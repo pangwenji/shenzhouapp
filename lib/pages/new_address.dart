@@ -11,32 +11,28 @@ class NewAddress extends StatefulWidget {
 class _NewAddressState extends State<NewAddress> {
   GlobalKey _key = GlobalKey<FormState>();
   TextEditingController _controller = TextEditingController();
+  TextEditingController area = TextEditingController();
+  TextEditingController locationArea = TextEditingController();
+  TextEditingController detailArea = TextEditingController();
   final _bottomSheetScaffoldKey = GlobalKey<ScaffoldState>();
-
-  // _openBottomSheet() {
-
-  //     return showModalBottomSheet(
-  //       child: Container(
-  //         height: ScreenUtil().setHeight(450),
-  //         width:MediaQuery.of(context).size.width,
-  //         color: Colors.blue,
-  //         child: Text('底部'),
-  //       ),
-  //     );
-  //   });
-  // }
+  bool isShowHint = true;
 
   Future _openModalBottomSheet() async {
     final String option = await showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
-        return  Container(
+          return Container(
             height: ScreenUtil().setHeight(450),
             width: MediaQuery.of(context).size.width,
             color: Colors.blue,
             child: Text('底部'),
           );
         });
+  }
+
+  _validator(val) {
+    print(val);
+    print('vvvvvvvvvv');
   }
 
   @override
@@ -54,16 +50,8 @@ class _NewAddressState extends State<NewAddress> {
               padding: EdgeInsets.only(left: 8, right: 8),
               child: Column(
                 children: [
-                  TextFormField(
-                    autofocus: false,
-                    controller: _controller,
-                    decoration: InputDecoration(
-                      labelText: '收件人*',
-                      hintText: '收件人*',
-                    ),
-                  ),
+                  _TextFormField('收件人*', false, _controller),
                   Container(
-                    color: Colors.red,
                     height: 50,
                     child: Row(
                       children: [
@@ -83,22 +71,50 @@ class _NewAddressState extends State<NewAddress> {
                               ),
                             )),
                         Container(
-                          width: 120,
-                          color: Colors.blue,
+                          width: ScreenUtil().setWidth(130),
                           child: TextFormField(
+                            validator: (val) {
+                              _validator(val);
+                            },
                             autofocus: true,
-                            controller: _controller,
+                            controller: locationArea,
                             decoration: InputDecoration(
                               labelText: '收件人*',
-                              hintText: '收件人*',
                             ),
                           ),
                         )
                       ],
                     ),
-                  )
+                  ),
+                  _TextFormField('所在地区*', true, area),
+                  _TextFormField('详细地址*', false, detailArea)
                 ],
               ),
             )));
+  }
+
+  Widget _TextFormField(labelText, flag, controller) {
+    if (flag) {
+      return InkWell(
+        onTap: () {
+          
+        },
+        child: TextFormFieldWidget(labelText, flag, controller),
+      );
+    }
+    return TextFormFieldWidget(labelText, flag, controller);
+  }
+
+  Widget TextFormFieldWidget(labelText, flag, controller) {
+    return TextFormField(
+      onChanged: (val) {
+        print(flag);
+      },
+      autofocus: false,
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: labelText,
+      ),
+    );
   }
 }

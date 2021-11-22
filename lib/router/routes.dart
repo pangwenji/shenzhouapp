@@ -16,5 +16,6 @@ class Routes {
   static String home = '/';
   static String volumeTrial = '/volumeTrial';
   static String newAddress = '/newAddress';
+  static String transportMethods = '/transportMethods';
 
 }

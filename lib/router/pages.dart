@@ -9,12 +9,18 @@ import 'package:shenzhouapp/pages/novice_tutorial.dart';
 import 'package:shenzhouapp/pages/registered_goods.dart';
 import 'package:shenzhouapp/pages/savings_deposit_card.dart';
 import 'package:shenzhouapp/pages/set_address.dart';
+import 'package:shenzhouapp/pages/transport_methods.dart';
 import 'package:shenzhouapp/pages/trial_series.dart';
 import 'package:shenzhouapp/pages/volume_trial.dart';
 import 'package:shenzhouapp/router/routes.dart';
 
 class Pages {
   static final routes = [
+    GetPage(  
+        name: Routes.transportMethods, 
+        page: ()=>TransportMethods(),
+        transition: Transition.fadeIn
+      ),
      GetPage(  
         name: Routes.newAddress, 
         page: ()=>NewAddress(),
