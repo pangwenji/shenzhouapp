@@ -23,13 +23,13 @@ class _TransportMethodsState extends State<TransportMethods> {
   void handleData() {
     var res = Get.parameters['data'];
     var tem = res!.replaceAll('[', '');
-    var temStr = tem!.replaceAll(']', '');
+    var temStr = tem.replaceAll(']', '');
     var tatal = temStr.split(",");
     var totalArray = <Widget>[];
     tatal.forEach((element) => {
           totalArray.add(
             Container(
-              height: 70,
+              height: 60,
               child: InkWell(
             onTap: () {},
             child: Row(
