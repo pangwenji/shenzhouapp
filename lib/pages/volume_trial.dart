@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 class VolumeTrial extends StatefulWidget {
   VolumeTrial({Key? key}) : super(key: key);
-
   @override
   _VolumeTrialState createState() => _VolumeTrialState();
 }
@@ -20,9 +19,9 @@ class _VolumeTrialState extends State<VolumeTrial> {
           Container(
             padding: EdgeInsets.all(12),
             width: MediaQuery.of(context).size.width,
-            child: Text('港澳台体积重量试算（L*W*H/6000）',
-                style: TextStyle(color: Colors.grey, fontSize: 16.0)
-                ),
+            // child: Text('港澳台体积重量试算（L*W*H/6000）',
+            child: Text('${Get.parameters['title']}',
+                style: TextStyle(color: Colors.grey, fontSize: 16.0)),
           ),
           _container('长:', '请输入物品长度(cm)'),
           _container('宽:', '请输入物品宽度(cm)'),
@@ -39,9 +38,9 @@ class _VolumeTrialState extends State<VolumeTrial> {
         padding: EdgeInsets.only(left: 12, bottom: 10),
         child: Row(
           children: [
-            Text(labelText, style: TextStyle(color: Colors.grey,fontSize: 16)),
+            Text(labelText, style: TextStyle(color: Colors.grey, fontSize: 16)),
             Container(
-              width: 340,
+              width: 320,
               height: 45,
               padding: EdgeInsets.only(left: 10, right: 10),
               child: TextField(
@@ -50,16 +49,12 @@ class _VolumeTrialState extends State<VolumeTrial> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                         borderSide:
-                            BorderSide(color: Colors.grey, width: 1.0)
-                            )
-                          ),
+                            BorderSide(color: Colors.grey, width: 1.0))),
               ),
             ),
-            Text('CM', style: TextStyle(color: Colors.grey,fontSize: 16)
-            )
+            Text('CM', style: TextStyle(color: Colors.grey, fontSize: 16))
           ],
-        )
-      );
+        ));
   }
 
   Widget _bottomContainer() {
@@ -67,26 +62,24 @@ class _VolumeTrialState extends State<VolumeTrial> {
       padding: EdgeInsets.only(left: 12),
       child: Row(
         children: [
-          Text('体积重:',style: TextStyle(
-            color: Colors.grey,
-            fontSize: 16.0
-          )),
+          Text('体积重:', style: TextStyle(color: Colors.grey, fontSize: 16.0)),
           Container(
-            width: 230,
+            width: 200,
             height: 45,
             padding: EdgeInsets.only(left: 10, right: 10),
             child: TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(5)),
-                      borderSide: BorderSide(color: Colors.grey, width: 1.0)
-                      )
-                  ),
+                      borderSide: BorderSide(color: Colors.grey, width: 1.0))),
             ),
           ),
           Container(
             padding: EdgeInsets.only(right: 10),
-            child: Text('KG',style: TextStyle(color: Colors.grey, fontSize: 16.0),),
+            child: Text(
+              'KG',
+              style: TextStyle(color: Colors.grey, fontSize: 16.0),
+            ),
           ),
           MaterialButton(
             color: Colors.redAccent,
@@ -104,19 +97,23 @@ class _VolumeTrialState extends State<VolumeTrial> {
 
   Widget _contanierText() {
     return Container(
-      child: Expanded(
-         child:  Column(
+        child: Expanded(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            Text('温馨提示',style: TextStyle(
-                 color: Colors.pink,
-                 fontSize: 16.0
-              ),
-             ),
-             Text('因会员卡权益的不同享有不同的优惠，上述试算结果仅供参考，请下单时候最终优惠为准！',maxLines: 4,)
-          ],
+          Text(
+            '温馨提示',
+            style: TextStyle(color: Colors.pink, fontSize: 16.0),
+          ),
+          Text(
+            '因会员卡权益的不同享有不同的优惠，上述试算结果仅供参考，请下单时候最终优惠为准！',
+            maxLines: 4,
+          )
+        ],
       ),
-      )
-    );
+    ));
   }
+}
+
+class $ {
 }

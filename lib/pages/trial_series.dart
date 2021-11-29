@@ -49,22 +49,38 @@ class TrailSeries extends StatelessWidget {
               case '/distributionMode':
                 Get.toNamed(route);
                 break;
+              case '/volumeTrial':
+                Get.toNamed(route, parameters: {"title":"港澳台体积重量试算（L*W*H/6000）"});
+                break;
               case 'freight':
-                // Get.snackbar('温馨提醒', "由于国际邮件经常更新，国际件实际运费请向客服查询!",
-                // showProgressIndicator:true,
-                //       isDismissible:true,
-                //     mainButton: TextButton(
-                //       onPressed: () {},
-                //       child: Text('关闭',style: TextStyle(
-                //         color: Colors.red,
-                //         fontSize: 16.0,
-
-                //       ),
-                //       ),
-                //      )
-                //     );
-                Get.dialog(_dialog());
-                
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(
+                          '温馨提醒',
+                          style: TextStyle(fontSize: 16.0),
+                        ),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: [
+                              Text('由于国际邮件经常更新,国际件'),
+                              Text('实际运费请向客服查询!')
+                            ],
+                          ),
+                        ),
+                        actions: [
+                          FlatButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text(
+                                '关闭',
+                                style: TextStyle(color: Colors.red),
+                              ))
+                        ],
+                      );
+                    });
                 break;
             }
           },
