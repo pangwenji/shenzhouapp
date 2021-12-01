@@ -79,6 +79,9 @@ flutter:
    - images/integral.png
    - images/reward.png
    - images/notebook_address.png
+   - images/constance.png
+   - images/organization.png
+   - images/record.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

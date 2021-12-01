@@ -34,11 +34,11 @@ class WaveClipper extends CustomPainter  {
     var radius = size * 2;
     path.reset();
     // path.moveTo(waveWidth, radius);
-    for (double i = -waveWidth; i < size; i += -waveWidth) {
-      path.relativeQuadraticBezierTo(
-          waveWidth / 4, waveheigth, waveWidth / 2, 0);
-      path.relativeQuadraticBezierTo(
-          waveWidth / 4, waveheigth, waveWidth / 2, 0);
-    }
+    // for (double i = -waveWidth; i < size; i += -waveWidth) {
+    //   path.relativeQuadraticBezierTo(
+    //       waveWidth / 4, waveheigth, waveWidth / 2, 0);
+    //   path.relativeQuadraticBezierTo(
+    //       waveWidth / 4, waveheigth, waveWidth / 2, 0);
+    // }
   }
 }

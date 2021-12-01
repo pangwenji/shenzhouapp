@@ -45,19 +45,19 @@ class _CouponState extends State<Coupon> {
     return Container(
       child: Column(
         children: [
-          ClipPath(
-            clipper: WaveClipper(),
-            child: Container(
-              height: 200,
-              color: Colors.red,
-              child: Row(
-                children: [
-                  Expanded(flex: 1, child: Container()),
-                  Expanded(flex: 1, child: Container())
-                ],
-              ),
-            ),
-          ),
+          // ClipPath(
+          //   clipper: WaveClipper(),
+          //   child: Container(
+          //     height: 200,
+          //     color: Colors.red,
+          //     child: Row(
+          //       children: [
+          //         Expanded(flex: 1, child: Container()),
+          //         Expanded(flex: 1, child: Container())
+          //       ],
+          //     ),
+          //   ),
+          // ),
 
         ],
       ),
