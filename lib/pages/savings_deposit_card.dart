@@ -12,6 +12,7 @@ class SavingDepositCard extends StatefulWidget {
 class _SavingDepositCardState extends State<SavingDepositCard> {
   late TextEditingController _controller = TextEditingController();
   bool isShoose = false;
+  late double _height;
   final tabs = <Widget>[
     Tab(
         child: Row(
@@ -62,13 +63,13 @@ class _SavingDepositCardState extends State<SavingDepositCard> {
       onTap: () {
         switch (type) {
           case 'firt':
-            this._showDialog(context, 'firt');
+            this._showDialog(context, 'firt', '全店通用储值卡充值金额',180);
             break;
           case 'second':
-            this._showDialog(context, 'second');
+            this._showDialog(context, 'second', '充值全店通用储值卡',300);
             break;
           case 'thrid':
-            this._showDialog(context, 'thrid');
+            this._showDialog(context, 'thrid', '全店通用储值卡充值记录',500);
         }
       },
       child: Row(
@@ -97,11 +98,14 @@ class _SavingDepositCardState extends State<SavingDepositCard> {
   }
 
   _contentContainer(type) {
+    double height;
     switch (type) {
       case 'firt':
+        height = 130;
         return Container(
-          width: ScreenUtil().setWidth(300),
-          height: 100,
+          alignment: Alignment.centerLeft,
+          width: 320,
+          height: height,
           child: TextField(
             controller: _controller,
             onChanged: (val) {},
@@ -110,8 +114,9 @@ class _SavingDepositCardState extends State<SavingDepositCard> {
         );
       case 'second':
         return Container(
-            width: ScreenUtil().setWidth(300),
-            height: ScreenUtil().setHeight(400),
+          alignment: Alignment.bottomLeft,
+            width: 320,
+            height: 250,
             child: Column(
               children: [
                 TextField(
@@ -138,48 +143,73 @@ class _SavingDepositCardState extends State<SavingDepositCard> {
                 )
               ],
             ));
-      case 'thrid':
+      // case 'thrid':
     }
   }
 
-  _showDialog(context, type) {
+  _showDialog(context, type, title, double _height) {
     return showDialog(
         context: context,
         builder: (context) {
-          return UnconstrainedBox(
-            constrainedAxis: Axis.vertical,
-            child: SizedBox(
-              width: ScreenUtil().setWidth(300),
-              child: Dialog(
+          return Container(
+            height: 650,
+            width: 320,
+            child: Dialog(
                 insetPadding: EdgeInsets.zero,
                 child: Container(
-                  height: ScreenUtil().setHeight(200),
+                  alignment: Alignment.centerLeft,
+                  width: 320,
+                  height: _height,
                   child: Stack(
                     children: [
+                      Positioned(
+                          top: 0,
+                          child: Container(
+                            padding: EdgeInsets.only(left: 10, top: 10),
+                            child: Text(
+                              title,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          )),
                       _contentContainer(type),
-                      Positioned(bottom: 0, child: _buttonWidget())
+                      Positioned(
+                          bottom: 0,
+                          child: Container(
+                            width: ScreenUtil().setWidth(150),
+                            height: ScreenUtil().setHeight(80),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [_buttonWidget()],
+                            ),
+                          ))
                     ],
                   ),
-                ),
-              ),
-            ),
+                )),
           );
         });
   }
-  Widget _buttonWidget(){
+
+  Widget _buttonWidget() {
     return Container(
       child: Row(
         children: [
           MaterialButton(
-            onPressed: (){},
+            color: Colors.blue.shade500,
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
             child: Text('关闭'),
           ),
+          Padding(padding: EdgeInsets.all(8)),
           MaterialButton(
-            onPressed: (){},
+            onPressed: () {},
+            color: Colors.blue.shade500,
             child: Text('确认'),
           )
         ],
       ),
-    )
+    );
   }
 }

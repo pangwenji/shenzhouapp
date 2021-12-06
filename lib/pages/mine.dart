@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shenzhouapp/components/avtorImage.dart';
 
 class Mine extends StatelessWidget {
   const Mine({Key? key}) : super(key: key);
@@ -30,8 +31,12 @@ class Mine extends StatelessWidget {
                 Container(
                   child: Row(
                     children: [
-                      Container(
-                        child: Image.asset('images/avatar.png'),
+                      CircleShineImage(
+                        image: AssetImage('images/icon_head.png'),
+                        color: Colors.red,
+                        maxBlurRadius: 6,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.easeIn,
                       ),
                       Container(
                         padding: EdgeInsets.only(left: 10),
