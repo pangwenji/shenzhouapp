@@ -11,6 +11,7 @@ import 'package:shenzhouapp/pages/savings_deposit_card.dart';
 import 'package:shenzhouapp/pages/set_address.dart';
 import 'package:shenzhouapp/pages/transport_methods.dart';
 import 'package:shenzhouapp/pages/trial_series.dart';
+import 'package:shenzhouapp/pages/user_settings.dart';
 import 'package:shenzhouapp/pages/volume_trial.dart';
 import 'package:shenzhouapp/router/routes.dart';
 
@@ -79,6 +80,11 @@ class Pages {
        GetPage(
         name: Routes.volumeTrial, 
         page: ()=>VolumeTrial(),
+        transition: Transition.fadeIn
+      ),
+      GetPage(
+        name: Routes.userSettings, 
+        page: ()=>UserSettings(),
         transition: Transition.fadeIn
       ),
     ];

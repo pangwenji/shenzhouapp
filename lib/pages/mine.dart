@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shenzhouapp/components/avtorImage.dart';
+import 'package:get/get.dart';
+import 'package:shenzhouapp/router/routes.dart';
 
 class Mine extends StatelessWidget {
   const Mine({Key? key}) : super(key: key);
@@ -29,6 +31,10 @@ class Mine extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
+                    child: InkWell(
+                  onTap: () {
+                    Get.toNamed(Routes.userSettings);
+                  },
                   child: Row(
                     children: [
                       CircleShineImage(
@@ -63,7 +69,7 @@ class Mine extends StatelessWidget {
                       )
                     ],
                   ),
-                ),
+                )),
                 //第二行
                 Container(
                   margin: EdgeInsets.only(top: 5),
@@ -219,7 +225,9 @@ class Mine extends StatelessWidget {
                     bottom: BorderSide(width: 0.9, color: Colors.grey.shade300))
                 : Border()),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            // Get.toNamed(Routes.userSettings);
+          },
           child: Row(
             children: [
               Container(
