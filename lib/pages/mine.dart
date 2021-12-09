@@ -72,36 +72,41 @@ class Mine extends StatelessWidget {
                 )),
                 //第二行
                 Container(
-                  margin: EdgeInsets.only(top: 5),
-                  height: 60,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                      border: Border(
-                    bottom: BorderSide(color: Colors.grey.shade300, width: 6),
-                    top: BorderSide(color: Colors.grey.shade300, width: 6),
-                  )),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        child: Image.asset(
-                          'images/location.png',
-                          width: 18,
-                          height: 18,
-                        ),
+                    margin: EdgeInsets.only(top: 5),
+                    height: 64,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                        border: Border(
+                      bottom: BorderSide(color: Colors.grey.shade300, width: 6),
+                      top: BorderSide(color: Colors.grey.shade300, width: 6),
+                    )),
+                    child: InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.transportationAddress);
+                      },
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            child: Image.asset(
+                              'images/location.png',
+                              width: 18,
+                              height: 18,
+                            ),
+                          ),
+                          Container(
+                            width: 320,
+                            child: Text('我的集运专属地址（国内仓/神州仓）'),
+                          ),
+                          Container(
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 10,
+                            ),
+                          )
+                        ],
                       ),
-                      Container(
-                        child: Text('我的集运专属地址（国内仓/神州仓）'),
-                      ),
-                      Container(
-                        child: Icon(
-                          Icons.arrow_forward_ios,
-                          size: 10,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                    )),
                 // 第三行
                 Container(
                   padding: EdgeInsets.only(bottom: 5),
