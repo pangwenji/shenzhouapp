@@ -62,35 +62,77 @@ class _TransportationAddressState extends State<TransportationAddress> {
             _listContainer(data[2]['title'], data[2]['subtitle']),
             _listContainer(data[3]['title'], data[3]['subtitle']),
             _listContainer(data[4]['title'], data[4]['subtitle']),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.only(left: 8, right: 8),
+              height: 250,
+              child: Wrap(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(
+                      '温馨提醒:神周集运不收取任何入仓费等费用！！！',
+                      maxLines: 5,
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.red,
+                          fontWeight: FontWeight.w800),
+                    ),
+                  ),
+                  _textContainer(
+                      '无论多大多重的以及多少件货物，我们都正常收货，也不会有任何入仓费之类的费用，如有入仓费或者排队费等费用，是物流公司乱收费，不是我们收取的，请微信提供证据给13719441662（微信同号）'),
+                  _textContainer(
+                      '家私、家电，机械，设备等大件货物，如需发物流送货或是提货，联系电话请留意：17809091234')
+                ],
+              ),
+            )
           ],
         ),
       )),
     );
   }
 
-  Widget _listContainer(title, subTile) {
+  Widget _textContainer(title) {
     return Container(
-      height: 70,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-          border: Border(
-              bottom: BorderSide(width: 1.0, color: Colors.grey),
-              top: BorderSide(width: 1.0, color: Colors.grey))),
-      child: Column(
-        children: [
-          Text(title),
-          Container(
-              height: 45,
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 2, child: expandContainer(subTile, 17.0, false)),
-                  Expanded(flex: 1, child: expandContainer('复制', 7.0, true))
-                ],
-              ))
-        ],
+      padding: EdgeInsets.only(top: 20),
+      child: Text(
+        title,
+        textAlign: TextAlign.justify,
+        style: TextStyle(
+            fontSize: 14, color: Colors.grey, fontWeight: FontWeight.w800),
       ),
     );
+  }
+
+  Widget _listContainer(title, subTile) {
+    return InkWell(
+        onTap: () {
+          Get.defaultDialog();
+        },
+        child: Container(
+          height: 70,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(width: 1.0, color: Colors.grey),
+                  top: BorderSide(width: 1.0, color: Colors.grey))),
+          child: Column(
+            children: [
+              Text(title),
+              Container(
+                  height: 45,
+                  child: Row(
+                    children: [
+                      Expanded(
+                          flex: 2,
+                          child: expandContainer(subTile, 17.0, false)),
+                      Expanded(flex: 1, child: expandContainer('复制', 7.0, true))
+                    ],
+                  ))
+            ],
+          ),
+        ));
   }
 
   Widget expandContainer(title, size, flag) {
