@@ -18,4 +18,8 @@ class Routes {
   static String transportMethods = '/transportMethods';
   static String userSettings = '/userSettings';
   static String transportationAddress = '/transportationAddress';
+  static String myEvaluation = '/myEvaluation';
+  static String myTeam = '/myTeam';
+  static String question = '/question';
+  static String myTeamDetail = '/myTeamDetail';
 }

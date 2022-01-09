@@ -1,9 +1,13 @@
 import 'package:get/get.dart';
 import 'package:shenzhouapp/components/distribution_mode.dart';
+import 'package:shenzhouapp/pages/common_problem.dart';
 import 'package:shenzhouapp/pages/coupon.dart';
 import 'package:shenzhouapp/pages/goodsStatus.dart';
 import 'package:shenzhouapp/pages/home.dart';
+import 'package:shenzhouapp/pages/my_evaluation.dart';
 import 'package:shenzhouapp/pages/my_order.dart';
+import 'package:shenzhouapp/pages/my_team.dart';
+import 'package:shenzhouapp/pages/my_team_detail.dart';
 import 'package:shenzhouapp/pages/new_address.dart';
 import 'package:shenzhouapp/pages/novice_tutorial.dart';
 import 'package:shenzhouapp/pages/registered_goods.dart';
@@ -91,6 +95,26 @@ class Pages {
        GetPage(
         name: Routes.transportationAddress, 
         page: ()=>TransportationAddress(),
+        transition: Transition.fadeIn
+      ),
+      GetPage(
+        name: Routes.myEvaluation, 
+        page: ()=>MyEvaluation(),
+        transition: Transition.fadeIn
+      ),
+       GetPage(
+        name: Routes.myTeam,
+        page: ()=>MyTeam(),
+        transition: Transition.fadeIn
+      ),
+       GetPage(
+        name: Routes.question,
+        page: ()=>CommonProblem(),
+        transition: Transition.fadeIn
+      ),
+        GetPage(
+        name: Routes.myTeamDetail,
+        page: ()=>MyTeamDetail(),
         transition: Transition.fadeIn
       ),
     ];

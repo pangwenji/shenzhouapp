@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class TransportationAddress extends StatefulWidget {
   TransportationAddress({Key? key}) : super(key: key);
@@ -108,7 +109,7 @@ class _TransportationAddressState extends State<TransportationAddress> {
   Widget _listContainer(title, subTile) {
     return InkWell(
         onTap: () {
-          Get.defaultDialog();
+          this._showDliaog(title, '已复制');
         },
         child: Container(
           height: 70,
@@ -135,6 +136,17 @@ class _TransportationAddressState extends State<TransportationAddress> {
         ));
   }
 
+  _showDliaog(title, tip) {
+    Fluttertoast.showToast(
+        msg: title + tip,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.black54,
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
+
   Widget expandContainer(title, size, flag) {
     return Container(
       padding: EdgeInsets.only(right: size),
@@ -149,11 +161,16 @@ class _TransportationAddressState extends State<TransportationAddress> {
   Widget _SizeBox(title, subTilte) {
     return Expanded(
         flex: 1,
-        child: Column(
-          children: [
-            Text(title, style: TextStyle(color: Colors.grey)),
-            Text(subTilte, style: TextStyle(fontSize: 15.0))
-          ],
+        child: InkWell(
+          onTap: () {
+             this._showDliaog(subTilte, '已复制');
+          },
+          child: Column(
+            children: [
+              Text(title, style: TextStyle(color: Colors.grey)),
+              Text(subTilte, style: TextStyle(fontSize: 15.0))
+            ],
+          ),
         ));
   }
 

@@ -22,6 +22,17 @@ class Mine extends StatelessWidget {
         appBar: AppBar(
           title: Text('我的'),
           centerTitle: true,
+          actions: [
+            InkWell(
+              child: Row(
+                children: [
+                  Icon(Icons.settings),
+                  Text('设置',
+                      style: TextStyle(color: Colors.white, fontSize: 16)),
+                ],
+              ),
+            )
+          ],
         ),
         body: Scrollbar(
             child: SingleChildScrollView(
@@ -231,7 +242,11 @@ class Mine extends StatelessWidget {
                 : Border()),
         child: InkWell(
           onTap: () {
-            // Get.toNamed(Routes.userSettings);
+            if (title == '我的评价') {
+              Get.toNamed(Routes.myEvaluation);
+            } else if (title == '我的团队') {
+              Get.toNamed(Routes.myTeam);
+            }
           },
           child: Row(
             children: [
@@ -255,6 +270,7 @@ class Mine extends StatelessWidget {
               )
             ],
           ),
-        ));
+        )
+      );
   }
 }

@@ -86,8 +86,26 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///D:/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "fluttertoast",
+      "rootUri": "file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluttertoast-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "get",
       "rootUri": "file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/get-4.3.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/js-0.6.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -188,7 +206,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-12-06T01:47:20.128173Z",
+  "generated": "2022-01-07T02:20:23.570810Z",
   "generator": "pub",
   "generatorVersion": "2.13.0"
 }

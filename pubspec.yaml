@@ -31,6 +31,7 @@ dependencies:
   provider: ^6.0.0
   fluro: ^2.0.3
   get: ^4.1.4
+  fluttertoast: ^4.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -83,6 +84,15 @@ flutter:
    - images/organization.png
    - images/record.png
    - images/icon_head.png
+   - images/noData.png
+   - images/zhuanfa.png
+   - images/question.png
+   - images/newSwiper1.jpeg
+   - images/newSwiper2.jpeg
+   - images/newSwiper3.jpeg
+   - images/newSwiper4.jpeg
+   - images/newSwiper5.jpeg
+   - images/newSwiper6.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
