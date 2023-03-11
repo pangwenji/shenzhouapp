@@ -1,0 +1,484 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart'], (function load__packages__shenzhouapp__messagepages__system_message_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__painting__borders$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  var system_message = Object.create(dart.library);
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
+    JSArrayOfMapOfString$dynamic: () => (T.JSArrayOfMapOfString$dynamic = dart.constFn(_interceptors.JSArray$(T.MapOfString$dynamic())))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    BuildContextAndintToInkWell: () => (T.BuildContextAndintToInkWell = dart.constFn(dart.fnType(ink_well.InkWell, [framework.BuildContext, core.int])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 47,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 31,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 47,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 31,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 25,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], T._LocationL());
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14], T._LocationL());
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 42,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17], T._LocationL());
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 30,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 29,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 23,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27], T._LocationL());
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 30,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30], T._LocationL());
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 19,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 19,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 19,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35, C[36] || CT.C36], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 15,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40], T._LocationL());
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 9,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemExtent",
+        [_Location_column]: 9,
+        [_Location_line]: 15,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 9,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43, C[44] || CT.C44, C[45] || CT.C45], T._LocationL());
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 13,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+      });
+    }
+  }, false);
+  var C = Array(46).fill(void 0);
+  var I = [
+    "package:shenzhouapp/messagepages/system_message.dart",
+    "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/messagepages/system_message.dart"
+  ];
+  system_message.SystemMessage = class SystemMessage extends framework.StatefulWidget {
+    createState() {
+      return new system_message._SystemMessageState.new();
+    }
+  };
+  (system_message.SystemMessage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    system_message.SystemMessage.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = system_message.SystemMessage.prototype;
+  dart.addTypeTests(system_message.SystemMessage);
+  dart.addTypeCaches(system_message.SystemMessage);
+  dart.setMethodSignature(system_message.SystemMessage, () => ({
+    __proto__: dart.getMethods(system_message.SystemMessage.__proto__),
+    createState: dart.fnType(system_message._SystemMessageState, [])
+  }));
+  dart.setLibraryUri(system_message.SystemMessage, I[0]);
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  system_message._SystemMessageState = class _SystemMessageState extends framework.State$(system_message.SystemMessage) {
+    build(context) {
+      if (context == null) dart.nullFailed(I[1], 12, 29, "context");
+      return new scroll_view.ListView.builder({itemCount: this.textList[$length], itemExtent: 60.0, itemBuilder: dart.fn((context, index) => {
+          if (context == null) dart.nullFailed(I[1], 16, 36, "context");
+          if (index == null) dart.nullFailed(I[1], 16, 49, "index");
+          return new ink_well.InkWell.new({onTap: dart.fn(() => {
+            }, T.VoidTovoid()), child: new container.Container.new({alignment: alignment.Alignment.centerLeft, padding: new edge_insets.EdgeInsets.all(10.0), decoration: new box_decoration.BoxDecoration.new({border: new box_border.Border.new({bottom: new borders.BorderSide.new({color: colors.Colors.grey, width: 1.0})})}), child: new basic.Row.new({children: T.JSArrayOfWidget().of([new container.Container.new({child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new text.Text.new(core.String.as(this.textList[$_get](index)[$_get]("text")), {style: new text_style.TextStyle.new({fontSize: 14.0}), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), new text.Text.new(core.String.as(this.textList[$_get](index)[$_get]("time")), {style: new text_style.TextStyle.new({fontSize: 8.0, color: colors.Colors.grey}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4})]), $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), new basic.Expanded.new({child: new text.Text.new("", {$creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), new container.Container.new({child: new icon.Icon.new(icons.Icons.arrow_forward_ios, {size: 15.0, $creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), $creationLocationd_0dea112b090073317d4: C[25] || CT.C25})]), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37});
+        }, T.BuildContextAndintToInkWell()), $creationLocationd_0dea112b090073317d4: C[41] || CT.C41});
+    }
+  };
+  (system_message._SystemMessageState.new = function() {
+    this.textList = T.JSArrayOfMapOfString$dynamic().of([new (T.IdentityMapOfString$dynamic()).from(["text", "海关调查，通关延误", "time", "2021-10-31"]), new (T.IdentityMapOfString$dynamic()).from(["text", "广西私家930", "time", "2021-12-31"]), new (T.IdentityMapOfString$dynamic()).from(["text", "深空探索", "time", "2021-10-31"])]);
+    system_message._SystemMessageState.__proto__.new.call(this);
+    ;
+  }).prototype = system_message._SystemMessageState.prototype;
+  dart.addTypeTests(system_message._SystemMessageState);
+  dart.addTypeCaches(system_message._SystemMessageState);
+  dart.setMethodSignature(system_message._SystemMessageState, () => ({
+    __proto__: dart.getMethods(system_message._SystemMessageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(system_message._SystemMessageState, I[0]);
+  dart.setFieldSignature(system_message._SystemMessageState, () => ({
+    __proto__: dart.getFields(system_message._SystemMessageState.__proto__),
+    textList: dart.finalFieldType(core.List$(core.Map$(core.String, dart.dynamic)))
+  }));
+  dart.trackLibraries("packages/shenzhouapp/messagepages/system_message.dart", {
+    "package:shenzhouapp/messagepages/system_message.dart": system_message
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["system_message.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAMuC;IAAqB;;;QAHtC;;AAAQ,gEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;UAQjB;AACxB,YAAgB,8CACD,AAAS,oCACR,mBACC,SAAc,SAAa;cAAb;cAAa;AACtC,gBAAO,kCACI;uCACA,wCACkB,yCACD,+BAAI,mBACZ,8CACA,mCACI,mCAAyB,2BAAa,kBAC/C,6BAAc,wBACnB,oCACS,0CACkC,yCAC7B,wBACR,iCAAK,AAAQ,AAAO,qBAAN,KAAK,SAAE,kBACV,wCACK,iEAEhB,iCAAK,AAAQ,AAAO,qBAAN,KAAK,SAAE,kBACV,wCAAoB,YAAiB,qMAItD,+BAAgB,kBAAK,2HACrB,oCACW,kBACH,sCACA;;IAM1B;;;IAEiC,gBAAW,qCACvC,4CAAC,QAAO,aAAY,QAAO,gBAC3B,4CAAC,QAAO,WAAU,QAAO,gBACzB,4CAAC,QAAO,QAAO,QAAO;;;EAE7B","file":"../../../../../packages/shenzhouapp/messagepages/system_message.dart.lib.js"}');
+  // Exports:
+  return {
+    messagepages__system_message: system_message
+  };
+}));
+
+//# sourceMappingURL=system_message.dart.lib.js.map

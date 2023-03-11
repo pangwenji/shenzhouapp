@@ -1,0 +1,367 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/shenzhouapp/messagepages/system_message.dart', 'packages/flutter/src/material/tab_controller.dart', 'packages/flutter/src/material/colors.dart'], (function load__packages__shenzhouapp__pages__message_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__shenzhouapp__messagepages__system_message$46dart, packages__flutter__src__material__tab_controller$46dart, packages__flutter__src__material__colors$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const _internal = dart_sdk._internal;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const tabs = packages__flutter__src__material__icon_button$46dart.src__material__tabs;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const system_message = packages__shenzhouapp__messagepages__system_message$46dart.messagepages__system_message;
+  const tab_controller = packages__flutter__src__material__tab_controller$46dart.src__material__tab_controller;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  var message = Object.create(dart.library);
+  var $length = dartx.length;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    JSArrayOfTab: () => (T.JSArrayOfTab = dart.constFn(_interceptors.JSArray$(tabs.Tab)))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 9,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 14,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 9,
+        [_Location_line]: 15,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], T._LocationL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 19,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10], T._LocationL());
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13], T._LocationL());
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 11,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "tabs",
+        [_Location_column]: 11,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "indicatorColor",
+        [_Location_column]: 11,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.constList([C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18], T._LocationL());
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[15] || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21], T._LocationL());
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 9,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.constList([C[24] || CT.C24, C[25] || CT.C25], T._LocationL());
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[23] || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29], T._LocationL());
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+      });
+    }
+  }, false);
+  var C = Array(30).fill(void 0);
+  var I = [
+    "package:shenzhouapp/pages/message.dart",
+    "file:///D:/flutter-study/shenzhouapps/shenzhouapp/lib/pages/message.dart"
+  ];
+  message.MessagePage = class MessagePage extends framework.StatefulWidget {
+    createState() {
+      return new message._MessagePageState.new();
+    }
+  };
+  (message.MessagePage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    message.MessagePage.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = message.MessagePage.prototype;
+  dart.addTypeTests(message.MessagePage);
+  dart.addTypeCaches(message.MessagePage);
+  dart.setMethodSignature(message.MessagePage, () => ({
+    __proto__: dart.getMethods(message.MessagePage.__proto__),
+    createState: dart.fnType(message._MessagePageState, [])
+  }));
+  dart.setLibraryUri(message.MessagePage, I[0]);
+  var _tabs = dart.privateName(message, "_tabs");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _tabBarView = dart.privateName(message, "_tabBarView");
+  var ___MessagePageState__tabController = dart.privateName(message, "_#_MessagePageState#_tabController");
+  var ___MessagePageState__tabController_isSet = dart.privateName(message, "_#_MessagePageState#_tabController#isSet");
+  var _tabController = dart.privateName(message, "_tabController");
+  const State_SingleTickerProviderStateMixin$36 = class State_SingleTickerProviderStateMixin extends framework.State$(message.MessagePage) {};
+  (State_SingleTickerProviderStateMixin$36.new = function() {
+    ticker_provider.SingleTickerProviderStateMixin$(message.MessagePage)[dart.mixinNew].call(this);
+    State_SingleTickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_SingleTickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_SingleTickerProviderStateMixin$36, ticker_provider.SingleTickerProviderStateMixin$(message.MessagePage));
+  message._MessagePageState = class _MessagePageState extends State_SingleTickerProviderStateMixin$36 {
+    get [_tabController]() {
+      let t0;
+      return dart.test(this[___MessagePageState__tabController_isSet]) ? (t0 = this[___MessagePageState__tabController], t0) : dart.throw(new _internal.LateError.fieldNI("_tabController"));
+    }
+    set [_tabController](t0) {
+      if (t0 == null) dart.nullFailed(I[1], 24, 22, "null");
+      this[___MessagePageState__tabController_isSet] = true;
+      this[___MessagePageState__tabController] = t0;
+    }
+    initState() {
+      super.initState();
+      this[_tabController] = new tab_controller.TabController.new({length: this[_tabs][$length], vsync: this});
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[1], 34, 29, "context");
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new tabs.TabBar.new({controller: this[_tabController], tabs: this[_tabs], indicatorColor: colors.Colors.pinkAccent, $creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), body: new tabs.TabBarView.new({controller: this[_tabController], children: this[_tabBarView], $creationLocationd_0dea112b090073317d4: C[22] || CT.C22}), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26});
+    }
+  };
+  (message._MessagePageState.new = function() {
+    this[_tabs] = T.JSArrayOfTab().of([new tabs.Tab.new({text: "系统消息", $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), new tabs.Tab.new({text: "我的消息", $creationLocationd_0dea112b090073317d4: C[3] || CT.C3})]);
+    this[_tabBarView] = T.JSArrayOfWidget().of([new system_message.SystemMessage.new({$creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), new basic.Center.new({child: new text.Text.new("我的消息", {$creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), $creationLocationd_0dea112b090073317d4: C[11] || CT.C11})]);
+    this[___MessagePageState__tabController] = null;
+    this[___MessagePageState__tabController_isSet] = false;
+    message._MessagePageState.__proto__.new.call(this);
+    ;
+  }).prototype = message._MessagePageState.prototype;
+  dart.addTypeTests(message._MessagePageState);
+  dart.addTypeCaches(message._MessagePageState);
+  dart.setMethodSignature(message._MessagePageState, () => ({
+    __proto__: dart.getMethods(message._MessagePageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(message._MessagePageState, () => ({
+    __proto__: dart.getGetters(message._MessagePageState.__proto__),
+    [_tabController]: tab_controller.TabController
+  }));
+  dart.setSetterSignature(message._MessagePageState, () => ({
+    __proto__: dart.getSetters(message._MessagePageState.__proto__),
+    [_tabController]: tab_controller.TabController
+  }));
+  dart.setLibraryUri(message._MessagePageState, I[0]);
+  dart.setFieldSignature(message._MessagePageState, () => ({
+    __proto__: dart.getFields(message._MessagePageState.__proto__),
+    [_tabs]: dart.finalFieldType(core.List$(tabs.Tab)),
+    [_tabBarView]: dart.finalFieldType(core.List$(framework.Widget)),
+    [___MessagePageState__tabController]: dart.fieldType(dart.nullable(tab_controller.TabController)),
+    [___MessagePageState__tabController_isSet]: dart.fieldType(core.bool)
+  }));
+  dart.trackLibraries("packages/shenzhouapp/pages/message.dart", {
+    "package:shenzhouapp/pages/message.dart": message
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["message.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAOqC;IAAmB;;;QAHpC;;AAAQ,uDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmBtB;IAAc;;;MAAd;;IAAc;;MAKzB;MACN,uBAAiB,8CAAsB,AAAM;IAC/C;;UAG0B;AACxB,YAAO,oCACG,+BACC,iCACO,4BACN,6BACiB,sJAGrB,qCACQ,gCACF;IAGhB;;;IAnCM,cAAa,qBACjB,yFACA;IAGI,oBAAsB,wBAC1B,+FACA,6BACS;IAGQ;;;;EAyBrB","file":"../../../../../packages/shenzhouapp/pages/message.dart.lib.js"}');
+  // Exports:
+  return {
+    pages__message: message
+  };
+}));
+
+//# sourceMappingURL=message.dart.lib.js.map
